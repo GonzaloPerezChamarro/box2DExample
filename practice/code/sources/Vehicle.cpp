@@ -26,16 +26,16 @@ namespace example
 
 			shape.SetAsBox(70.f * scaled_pixels, 12.f * scaled_pixels);
 			fixture.shape = &shape;
-			fixture.density = 2100.f;
+			fixture.density = 20.f;
 			fixture.friction = 1.f;
 			fixture.restitution = 0.f;
 
 			bodies["vehicle"]->CreateFixture(&fixture);
 
-			shape.SetAsBox(35.f * scaled_pixels, 5.f * scaled_pixels, b2Vec2(-50.f * scaled_pixels, 20.f * scaled_pixels), -35 * 0.0174533f);
+			shape.SetAsBox(38.f * scaled_pixels, 5.f * scaled_pixels, b2Vec2(-55.f * scaled_pixels, 25.f * scaled_pixels), -50 * 0.0174533f);
 			bodies["vehicle"]->CreateFixture(&fixture);
 
-			shape.SetAsBox(35.f * scaled_pixels, 5.f * scaled_pixels, b2Vec2(50.f * scaled_pixels, 20.f * scaled_pixels), 35 * 0.0174533f);
+			shape.SetAsBox(38.f * scaled_pixels, 5.f * scaled_pixels, b2Vec2(55.f * scaled_pixels, 25.f * scaled_pixels), 50 * 0.0174533f);
 			bodies["vehicle"]->CreateFixture(&fixture);
 		}
 
@@ -54,8 +54,8 @@ namespace example
 
 			wheel1_shape.m_radius = 20.f * scaled_pixels;
 			wheel1_fixture.shape = &wheel1_shape;
-			wheel1_fixture.density = 500.f;
-			wheel1_fixture.friction = 0.6f;
+			wheel1_fixture.density = 5.f;
+			wheel1_fixture.friction = 0.9f;
 			wheel1_fixture.restitution = 0.f;
 
 			bodies["wheel1"]->CreateFixture(&wheel1_fixture);
@@ -69,7 +69,7 @@ namespace example
 			wheel1_joint.localAnchorA.Set(-3.7, -3.5);
 			wheel1_joint.localAnchorB.Set(0, 0);
 			wheel1_joint.enableMotor = true;
-			wheel1_joint.maxMotorTorque = 100000;
+			wheel1_joint.maxMotorTorque = 3000;
 			joints["wheel1"] = scene->get_world().CreateJoint(&wheel1_joint);
 
 			wheel1 = dynamic_cast<b2RevoluteJoint*>(joints["wheel1"]);
@@ -90,8 +90,8 @@ namespace example
 
 			wheel2_shape.m_radius = 20.f * scaled_pixels;
 			wheel2_fixture.shape = &wheel2_shape;
-			wheel2_fixture.density = 100.f;
-			wheel2_fixture.friction = 0.6f;
+			wheel2_fixture.density = 5.f;
+			wheel2_fixture.friction = 0.8f;
 			wheel2_fixture.restitution = 0.f;
 
 			bodies["wheel2"]->CreateFixture(&wheel2_fixture);
@@ -105,7 +105,7 @@ namespace example
 			wheel2_joint.localAnchorA.Set(3.7, -3.5);
 			wheel2_joint.localAnchorB.Set(0, 0);
 			wheel2_joint.enableMotor = true;
-			wheel2_joint.maxMotorTorque = 100000;
+			wheel2_joint.maxMotorTorque = 3000;
 			joints["wheel2"] = scene->get_world().CreateJoint(&wheel2_joint);
 
 			wheel2 = dynamic_cast<b2RevoluteJoint*>(joints["wheel2"]);
@@ -144,14 +144,12 @@ namespace example
 	}
 	void Vehicle::input()
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) ||
-			sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
 		{
 			right = false;
 			left = true;
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) ||
-			sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			right = true;
 			left = false;

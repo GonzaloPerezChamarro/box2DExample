@@ -27,6 +27,8 @@ namespace example
 
 		sf::Color color;
 
+		bool enabled;
+
 	public:
 		Entity(Scene* scene);
 		virtual ~Entity();
@@ -51,6 +53,8 @@ namespace example
 		{
 			return bodies.at("rectangle")->GetPosition();
 		}
+
+		void set_enabled(bool b) { enabled = b; }
 
 	protected:
 

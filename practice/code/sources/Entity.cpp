@@ -8,7 +8,9 @@
 namespace example
 {
 	Entity::Entity(Scene* scene) : scene(scene)
-	{}
+	{
+		enabled = true;
+	}
 
 	Entity::~Entity()
 	{
@@ -24,6 +26,8 @@ namespace example
 	}
 	void Entity::render(sf::RenderWindow & renderer)
 	{
+		if (!enabled) return;
+
 		float scale = scene->get_scale();
 
 		for (auto body_begin = bodies.begin(), body_end = bodies.end(); body_begin != body_end; ++body_begin){
@@ -46,7 +50,7 @@ namespace example
 					};
 					renderer.draw(line, 2, sf::Lines);
 				}
-				else if (type == b2Shape::e_polygon)
+				else if (type == b2Shape::e_polygon && !fixture->IsSensor())
 				{
 					//&& !fixture->IsSensor()
 					b2PolygonShape * polygon = static_cast<b2PolygonShape *>(fixture->GetShape());
@@ -76,6 +80,19 @@ namespace example
 					renderer.draw(circle_Shape);
 				}
 			}
+		}
+
+		for (auto joint_begin = joints.begin(), joint_end = joints.end(); joint_begin != joint_end; ++joint_begin)
+		{
+			b2Vec2 anchor_A = joint_begin->second->GetBodyA()->GetPosition();
+			b2Vec2 anchor_B = joint_begin->second->GetBodyB()->GetPosition();
+
+			sf::Vertex line[] = {
+				sf::Vertex(convert_to_sfml_pos(anchor_A, (float)scene->get_height()), sf::Color::Blue),
+				sf::Vertex(convert_to_sfml_pos(anchor_B, (float)scene->get_height()), sf::Color::Blue)
+			};
+			renderer.draw(line, 2, sf::Lines);
+
 		}
 	}
 }

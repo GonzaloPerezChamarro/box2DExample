@@ -17,7 +17,7 @@ namespace example
 		bool right;
 		bool left;
 
-		float motor_speed = 8000.f;
+		float motor_speed = 1100;
 
 	public:
 

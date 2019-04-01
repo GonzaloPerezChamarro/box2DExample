@@ -23,8 +23,8 @@ namespace example
 		b2FixtureDef fixture;
 		shape.m_radius = radius * pixels_scaled;
 		fixture.shape = &shape;
-		fixture.density = 300.f;
-		fixture.friction = 0.f;
+		fixture.density = 8.f;
+		fixture.friction = 0.6f;
 		fixture.restitution = 0.1f;
 
 		bodies["circle"]->CreateFixture(&fixture);
