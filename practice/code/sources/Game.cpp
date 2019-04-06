@@ -9,14 +9,18 @@
 #include "Sensor.hpp"
 #include "Hook.hpp"
 
+#include "ParticleSystem.hpp"
+
 namespace example
 {
+
 	Game::Game(const char * window_name, int width, int height)
 		: window(sf::VideoMode(width, height), window_name,
 			sf::Style::Titlebar | sf::Style::Close, sf::ContextSettings(32)),
 			scene( new Scene(window.getSize().x, window.getSize().y, 10.f, 10.f))
 	{
 		window.setFramerateLimit(60);
+
 
 		generate_world();
 

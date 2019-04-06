@@ -145,6 +145,7 @@
     <ClCompile Include="..\..\code\headers\Listener.cpp" />
     <ClCompile Include="..\..\code\sources\Circle.cpp" />
     <ClCompile Include="..\..\code\sources\Entity.cpp" />
+    <ClCompile Include="..\..\code\sources\FireParticle.cpp" />
     <ClCompile Include="..\..\code\sources\Game.cpp" />
     <ClCompile Include="..\..\code\sources\Hook.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Circle.hpp" />
     <ClInclude Include="..\..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\..\code\headers\FireParticle.hpp" />
     <ClInclude Include="..\..\code\headers\Game.hpp" />
     <ClInclude Include="..\..\code\headers\Hook.hpp" />
     <ClInclude Include="..\..\code\headers\Listener.hpp" />

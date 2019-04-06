@@ -1,38 +1,48 @@
 
 
 #include "ParticleSystem.hpp"
+#include "Particle.hpp"
 
 namespace example
 {
-	Particle_System::Particle_System(Scene * scene, b2Vec2 pos, sf::Vector2f dir,float speed, float life_time, size_t particles_count, float emission_time)
-		:position(pos), direction(dir), initial_particles(particles_count)
+	template <class PARTICLE>
+	Particle_System<PARTICLE>::Particle_System(Scene * scene, b2Vec2 pos, size_t particles_count, float emission_rate)
+		: Entity(scene), particles(particles_count), position(pos), initial_particles(particles_count), emission_rate(emission_rate), current_time(0.f)
 	{
-		Particle * particle = new Particle(this,scene, position,dir, speed, life_time, sf::Color::Red);
-		particles_pool = new Pool(particle, initial_particles);
-	}
-	Particle_System::~Particle_System()
-	{
-		particles_pool->reset_pool();
+
 	}
 
-	void Particle_System::update(float deltaTime)
+	template<class PARTICLE>
+	void Particle_System<PARTICLE>::update(float deltaTime)
 	{
-		for (auto particle : particles_pool->get_active_entities())
+		for (auto & particle : particles)
 		{
-			particle->update(deltaTime);
+			PARTICLE & p = particle;
+			if (!p.update(deltaTime))
+			{
+				particles.free_object(&p);
+			}
 		}
 	}
-
-	void Particle_System::render(sf::RenderWindow & renderer)
+	template<class PARTICLE>
+	void Particle_System<PARTICLE>::render(sf::RenderWindow & renderer)
 	{
-		for (auto particle : particles_pool->get_active_entities())
+		for (auto & particle : particles)
 		{
-			renderer.draw(static_cast<Particle*>((particle).get())->get_shape());
+			PARTICLE & p = particle;
+
+			p.render(renderer);
 		}
 	}
-
-	void Particle_System::kill_particle(Particle * p)
+	template<class PARTICLE>
+	void Particle_System<PARTICLE>::emission(float deltaTime)
 	{
-		particles_pool->return_to_pool(p);
+		current_time += deltaTime;
+
+		if (current_time >= emission_rate)
+		{
+			Particle * p = dynamic_cast<Particle *>(particles.get_free_object());
+			p->reset();
+		}
 	}
 }

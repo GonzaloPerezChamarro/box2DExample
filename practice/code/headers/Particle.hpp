@@ -1,20 +1,16 @@
 #pragma once
 
-#include "Entity.hpp"
+#include <SFML/Graphics.hpp>
 
 
 namespace example
 {
-	class Particle_System;
-	class Particle :public Entity
+	class Particle
 	{
-	private:
+	protected:
 
 		sf::Vector2f current_position;
 
-		sf::CircleShape shape;
-		float init_radius;
-		float current_radius;
 		sf::Color initial_color;
 		sf::Color current_color;
 		
@@ -23,24 +19,12 @@ namespace example
 		sf::Vector2f direction;
 		float speed;
 
-		Particle_System * own_system;
-
 
 	public:
-		Particle() = delete;
-		Particle(Particle_System* system,Scene * scene, b2Vec2 position, sf::Vector2f dir,float speed, float life_time, sf::Color c);
+		virtual bool update(float deltaTime) = 0;
+		virtual void render(sf::RenderWindow & renderer) = 0;
+		virtual void reset() = 0;
 
-	public:
-		void update(float deltaTime) override;
-
-		void collision_enter() override;
-		void collision_exit() override;
-
-	public: 
-		void reset_particle();
-
-
-		sf::CircleShape & get_shape() { return shape; }
 
 	};
 }
