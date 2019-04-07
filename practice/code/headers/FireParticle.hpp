@@ -12,6 +12,11 @@ namespace example
 		float init_radius;
 		float current_radius;
 
+		sf::Color color;
+		sf::Color current_color;
+		sf::Color end_color;
+		sf::Color delta_color;
+
 	public:
 		Fire_Particle();
 
@@ -19,7 +24,7 @@ namespace example
 
 		void render(sf::RenderWindow & renderer) override;
 
-		void reset() override;
+		void reset(sf::Vector2f pos) override;
 
 
 	};

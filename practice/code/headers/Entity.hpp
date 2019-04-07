@@ -35,7 +35,7 @@ namespace example
 
 	public:
 		virtual void update(float deltaTime) = 0;
-		void render(sf::RenderWindow & renderer);
+		virtual void render(sf::RenderWindow & renderer);
 
 	public:
 

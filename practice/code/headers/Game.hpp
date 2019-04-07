@@ -5,6 +5,7 @@
 
 namespace example
 {
+
 	class Game
 	{
 	private:
@@ -12,7 +13,6 @@ namespace example
 
 	private:
 		sf::RenderWindow window;
-
 		Scene * scene;
 
 	public:

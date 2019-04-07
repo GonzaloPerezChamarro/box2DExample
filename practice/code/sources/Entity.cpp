@@ -9,7 +9,6 @@ namespace example
 {
 	Entity::Entity(Scene* scene) : scene(scene)
 	{
-		enabled = true;
 	}
 
 	Entity::~Entity()
@@ -26,7 +25,6 @@ namespace example
 	}
 	void Entity::render(sf::RenderWindow & renderer)
 	{
-		if (!enabled) return;
 
 		float scale = scene->get_scale();
 

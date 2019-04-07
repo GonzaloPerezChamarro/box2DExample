@@ -1,7 +1,6 @@
 
 
 #include "ParticleSystem.hpp"
-#include "Particle.hpp"
 
 namespace example
 {
@@ -15,9 +14,10 @@ namespace example
 	template<class PARTICLE>
 	void Particle_System<PARTICLE>::update(float deltaTime)
 	{
+		
 		for (auto & particle : particles)
 		{
-			PARTICLE & p = particle;
+			Part & p = particle;
 			if (!p.update(deltaTime))
 			{
 				particles.free_object(&p);
@@ -27,10 +27,10 @@ namespace example
 	template<class PARTICLE>
 	void Particle_System<PARTICLE>::render(sf::RenderWindow & renderer)
 	{
+		
 		for (auto & particle : particles)
 		{
-			PARTICLE & p = particle;
-
+			Part & p = particle;
 			p.render(renderer);
 		}
 	}
@@ -41,8 +41,8 @@ namespace example
 
 		if (current_time >= emission_rate)
 		{
-			Particle * p = dynamic_cast<Particle *>(particles.get_free_object());
-			p->reset();
+			Part * p = particles.get_free_object();
+			p->reset(sf::Vector2f(100.f, 100.f));
 		}
 	}
 }

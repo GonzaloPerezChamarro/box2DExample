@@ -1,7 +1,7 @@
 
 
 #include "Rectangle.hpp"
-#include "..\headers\Platform.hpp"
+#include "Platform.hpp"
 
 #include <stdlib.h> 
 #include <iostream>

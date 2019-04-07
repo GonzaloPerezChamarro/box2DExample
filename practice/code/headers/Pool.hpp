@@ -1,5 +1,6 @@
 
 
+
 template< typename OBJECT >
 class Pool
 {

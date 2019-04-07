@@ -1,21 +1,21 @@
 #pragma once
 
 #include "Entity.hpp"
-#include "Particle.hpp"
 #include "Pool.hpp"
 
 namespace example
 {
+	class Particle;
+
 	template <class PARTICLE>
 	class Particle_System :public Entity
 	{
-		//static_assert(std::is_base_of<Particle, PARTICLE>, "FATHER ERROR");
 
 	private:
 
-		typedef PARTICLE Particle;
+		typedef PARTICLE Part;
 
-		Pool<Particle> particles;
+		Pool<PARTICLE> particles;
 
 		size_t initial_particles;
 
@@ -38,9 +38,9 @@ namespace example
 		void collision_enter() {}
 		void collision_exit() {}
 
-		void update(float deltaTime);
+		void update(float deltaTime) override;
 
-		void render(sf::RenderWindow & renderer);
+		void render(sf::RenderWindow & renderer) override;
 
 	private:
 		void emission(float deltaTime);
