@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include "ParticleSystem.hpp"
 
 namespace example
 {
@@ -25,5 +25,6 @@ namespace example
 		virtual void render(sf::RenderWindow & renderer) = 0;
 		virtual void reset(sf::Vector2f pos) = 0;
 
+	
 	};
 }
