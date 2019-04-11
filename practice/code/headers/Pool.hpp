@@ -68,45 +68,88 @@ namespace example
 
 		Pool(size_t size) : nodes(size)
 		{
+			if (size > 0)
+				this->first_free = &nodes[0];
+			else
+				first_free = nullptr;
+
+			if (size > 1)
+			{
+				first_free->next = &nodes[1];
+			}
+			first_free->prev = nullptr;
+
+			this->first_used = nullptr;
+
+
+			Node * current = first_free->next;
+
+			for (int i = 1; i < nodes.size() -1; ++i)
+			{
+				current = &nodes[i];
+				current->prev = &nodes[i - 1];
+				current->next = &nodes[i + 1];
+				current = current->next;
+			}
+
+			current = &nodes[nodes.size() - 1];
+			current->prev = &nodes[nodes.size() - 2];
+			current->next = nullptr;
+
+
 		}
 
 		Object * get_free_object()
 		{
-			if (first_free == nullptr) return nullptr;
+			Node * free = first_free;
 
-			Node * node = first_free;
-			if (first_free->next != nullptr)
+			if (free)
 			{
+				first_free = free->next;
 
-				first_free->prev->next = first_free->next;
+				if (free->next)
+				{
+					free->next->prev = nullptr;
+				}
+
+				free->next = first_used;
+				
+				if (first_used)
+				{
+					first_used->prev = free;
+				}
+				
+				first_used = free;
 			}
+			
+			return reinterpret_cast<Object *>(free);
 
-			first_free->next->prev = first_free->prev;
-
-			node->next = first_used;
-			node->prev = nullptr;
-
-			first_used->prev = node;
-			first_used = node;
-
-			return reinterpret_cast<Object *>(node);
 		}
 
 		void free_object(Object * object)
 		{
 			Node * node = reinterpret_cast<Node *>(object);
 
-			if (node->next != nullptr)
+			if (node->prev)
 			{
 				node->prev->next = node->next;
 			}
+			else
+			{
+				first_used = node->next;
+			}
 
-			node->next->prev = node->prev;
+			if (node->next)
+			{
+				node->next->prev = node->prev;
+			}
 
 			node->prev = nullptr;
 			node->next = first_free;
 
-			first_free->prev = node;
+			if(first_free)
+				first_free->prev = node;
+
 			first_free = node;
 		}
 

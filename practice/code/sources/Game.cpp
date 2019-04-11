@@ -8,7 +8,6 @@
 #include "Vehicle.hpp"
 #include "Sensor.hpp"
 #include "Hook.hpp"
-#include "Particle.hpp"
 #include "FireParticle.hpp"
 #include "ParticleSystem.hpp"
 
@@ -110,7 +109,7 @@ namespace example
 		scene->add_entity("hook", sh_Entity(new Hook(scene, 600.f, 390.f)));
 
 		//FIRE
-		scene->add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(scene, b2Vec2(0.f, 0.f), 10, 0.4f)));
+		scene->add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(scene, b2Vec2(650.f, 650.f), 10, 0.4f)));
 	}
 	
 

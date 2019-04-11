@@ -52,11 +52,11 @@ namespace example
 					particles.free_object(&p);
 				}
 			}
+			emission(deltaTime);
 		}
 
 		void render(sf::RenderWindow & renderer) override
 		{
-
 			for (auto & particle : particles)
 			{
 				Part & p = particle;
@@ -72,7 +72,9 @@ namespace example
 			if (current_time >= emission_rate)
 			{
 				Part * p = particles.get_free_object();
-				p->reset(sf::Vector2f(100.f, 100.f));
+				if(p)
+					p->reset(sf::Vector2f(position.x + 0, position.y + 0));
+				current_time = 0.f;
 			}
 		}
 
