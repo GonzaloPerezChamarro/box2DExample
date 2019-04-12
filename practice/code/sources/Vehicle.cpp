@@ -134,11 +134,24 @@ namespace example
 			wheel2->SetMotorSpeed(0);
 		}
 	}
-	void Vehicle::collision_enter()
+	void Vehicle::reset()
+	{
+		float scaled_pixels = scene->scale_pixels_to_sfml();
+
+		bodies["vehicle"]->SetTransform(position, 0.f);
+		bodies["vehicle"]->SetAngularVelocity(0.f);
+		bodies["vehicle"]->SetLinearVelocity(b2Vec2(0.f, 0.f));
+		bodies["wheel1"]->SetTransform(b2Vec2(100.f * scaled_pixels, 300.f * scaled_pixels), 0.f);
+		bodies["wheel2"]->SetTransform(b2Vec2(100.f * scaled_pixels, 300.f * scaled_pixels), 0.f);
+		wheel1->SetMotorSpeed(0);
+		wheel2->SetMotorSpeed(0);
+
+	}
+	void Vehicle::collision_enter(Entity*e)
 	{
 		//nothing
 	}
-	void Vehicle::collision_exit()
+	void Vehicle::collision_exit(Entity*e)
 	{
 		//nothing
 	}
@@ -158,6 +171,11 @@ namespace example
 		{
 			right = false;
 			left = false;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+		{
+			scene->set_have_to_reset(true);
 		}
 	}
 }

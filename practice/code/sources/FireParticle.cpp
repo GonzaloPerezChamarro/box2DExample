@@ -9,7 +9,7 @@ namespace example
 		color = sf::Color::Red;
 		end_color = sf::Color::Yellow;
 		delta_color = end_color - color;
-		life_time = 1.5f;
+		life_time = 2.f;
 		init_radius = 10.f;
 
 		reset(sf::Vector2f(0, 0));

@@ -28,13 +28,13 @@ namespace example
 			bodies["rectangle"]->SetTransform(platform->get_position() - offset, angle_in_rad);
 	}
 
-	void Sensor::collision_enter()
+	void Sensor::collision_enter(Entity* e)
 	{
 		current_time = 0;
 		next_mov = true;
 	}
 
-	void Sensor::collision_exit()
+	void Sensor::collision_exit(Entity* e)
 	{
 		current_time = 0;
 		next_mov = false;

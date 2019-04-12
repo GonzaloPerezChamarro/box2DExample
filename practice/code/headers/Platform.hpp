@@ -22,10 +22,6 @@ namespace example
 	public:
 		void update(float deltaTime) override;
 
-	public:
-		//void collision_enter() override;
-		//void collision_exit() override;
-
 		void set_have_to_move(bool b);
 		bool is_stopped() const { return stopped; }
 

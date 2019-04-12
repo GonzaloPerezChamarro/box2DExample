@@ -17,8 +17,10 @@ namespace example
 		void update(float deltaTime) override;
 		
 	public:
-		void collision_enter() override;
-		void collision_exit() override;
+		void collision_enter(Entity*) override;
+		void collision_exit(Entity*) override;
+
+		void reset() override;
 
 	};
 }

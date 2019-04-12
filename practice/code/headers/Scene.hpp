@@ -12,6 +12,7 @@ namespace example
 	using namespace std;
 
 	class Entity;
+	class Game;
 	class Scene
 	{
 	private:
@@ -28,6 +29,9 @@ namespace example
 		float gravity;
 
 		b2World world;
+		Game * game;
+
+		bool have_to_reset;
 
 	public:
 		Scene(int width, int height, float scale, float gravity);
@@ -52,12 +56,20 @@ namespace example
 
 		float scale_pixels_to_sfml(){return 1.f / scale;}
 
+		void set_game(Game * g) { game = g; }
+		Game * get_game() const { return game; }
+
+		void set_have_to_reset(bool b) { have_to_reset = b; }
+
 
 		void add_entity(const std::string name, const sh_Entity & entity);
 
 		Entity * get_entity_by_name(const std::string & name);
 
 		void set_particle_system(Scene * scene, sf::Vector2i position, sf::Vector2f direction, size_t num_Particles);
+
+	private:
+		void reset();
 
 
 	};

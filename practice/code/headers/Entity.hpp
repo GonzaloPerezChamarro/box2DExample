@@ -28,10 +28,13 @@ namespace example
 		sf::Color color;
 
 		bool enabled;
+		std::string tag = "none";
 
 	public:
 		Entity(Scene* scene);
 		virtual ~Entity();
+
+
 
 	public:
 		virtual void update(float deltaTime) = 0;
@@ -44,8 +47,10 @@ namespace example
 			return scene;
 		}
 		
-		virtual void collision_enter() = 0;
-		virtual void collision_exit() = 0;
+		virtual void collision_enter(Entity*) = 0;
+		virtual void collision_exit(Entity*) = 0;
+
+		virtual void reset() {}
 
 		void set_color(const sf::Color c) { color = c; }
 
@@ -55,6 +60,8 @@ namespace example
 		}
 
 		void set_enabled(bool b) { enabled = b; }
+		void set_tag(std::string t) { tag = t; }
+		std::string get_tag() const { return tag; }
 
 	protected:
 
