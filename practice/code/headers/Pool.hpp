@@ -1,3 +1,8 @@
+/**
+ * @brief Pool básica
+ * 
+ */
+
 
 namespace example
 {
@@ -6,22 +11,57 @@ namespace example
 	{
 		typedef OBJECT Object;
 		
+		/**
+		 * @brief Clase Nodo
+		 * 
+		 */
 		class Node
 		{
 		public:
+			/**
+			 * @brief Objeto
+			 * 
+			 */
 			Object object;
+
+			/**
+			 * @brief Nodo anterior
+			 * 
+			 */
 			Node * next;
+
+			/**
+			 * @brief Nodo siguiente
+			 * 
+			 */
 			Node * prev;
 		};
 
+		/**
+		 * @brief Vector de nodos
+		 * 
+		 */
 		std::vector< Node > nodes;
 
+		/**
+		 * @brief Apunta al primer elemento de los nodos sin usar
+		 * 
+		 */
 		Node * first_free;
+
+		/**
+		 * @brief Apunta al primer elemento de los nodos en uso
+		 * 
+		 */
 		Node * first_used;
 
 
 	public:
 
+		/**
+		 * @brief Clase iterador entre nodos
+		 * 
+		 */
 		class Iterator
 		{
 			Node * current;
@@ -66,6 +106,11 @@ namespace example
 
 	public:
 
+		/**
+		 * @brief Constructor de Pool
+		 * 
+		 * @param size 
+		 */
 		Pool(size_t size) : nodes(size)
 		{
 			if (size > 0)
@@ -99,6 +144,11 @@ namespace example
 
 		}
 
+		/**
+		 * @brief Devuelve Un objeto sin uso
+		 * 
+		 * @return Object* 
+		 */
 		Object * get_free_object()
 		{
 			Node * free = first_free;
@@ -126,6 +176,11 @@ namespace example
 
 		}
 
+		/**
+		 * @brief Livera el objeto que recibe
+		 * 
+		 * @param object 
+		 */
 		void free_object(Object * object)
 		{
 			Node * node = reinterpret_cast<Node *>(object);

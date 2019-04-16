@@ -1,3 +1,14 @@
+/**
+ * @file Scene.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase que representa una escena
+ * @version 0.1
+ * @date 2019-04-16
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
+
 #pragma once
 
 #include <string>
@@ -20,20 +31,55 @@ namespace example
 		typedef std::shared_ptr<Entity> sh_Entity;
 
 	private:
+
+		/**
+		 * @brief Mapa de entidades
+		 * 
+		 */
 		map<string, sh_Entity> entities_map;
 
+		/**
+		 * @brief Ancho de la ventana
+		 * 
+		 */
 		int width;
+
+		/**
+		 * @brief Alto de la ventana
+		 * 
+		 */
 		int height;
 
+		/**
+		 * @brief Factor de escala
+		 * 
+		 */
 		float scale;
+
+		/**
+		 * @brief Gravedad
+		 * 
+		 */
 		float gravity;
 
+		/**
+		 * @brief Mundo fisico
+		 * 
+		 */
 		b2World world;
 		Game * game;
 
 		bool have_to_reset;
 
 	public:
+	/**
+	 * @brief Constructor de Scene
+	 * 
+	 * @param width 
+	 * @param height 
+	 * @param scale 
+	 * @param gravity 
+	 */
 		Scene(int width, int height, float scale, float gravity);
 		virtual ~Scene();
 
@@ -43,6 +89,8 @@ namespace example
 		void render(sf::RenderWindow & renderer);
 
 	public:
+
+	//Metodos con nombres auto explicativos
 
 		b2World & get_world() {return world;}
 

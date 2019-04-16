@@ -40,7 +40,7 @@ namespace example
 
 	void Platform::move_to_target(float deltaTime)
 	{
-		if (!near_equals(bodies["rectangle"]->GetPosition(), target, 0.1f))
+		if (!near_equals(bodies["rectangle"]->GetPosition(), target, 1.f))
 		{
 			bodies["rectangle"]->SetTransform(bodies["rectangle"]->GetPosition() +
 				b2Vec2(mov_vec.x * speed * deltaTime,
@@ -57,7 +57,7 @@ namespace example
 
 	void Platform::move_to_init(float deltaTime)
 	{
-		if (!near_equals(bodies["rectangle"]->GetPosition(), position, 0.1f))
+		if (!near_equals(bodies["rectangle"]->GetPosition(), position, 1.f))
 		{
 			bodies["rectangle"]->SetTransform(bodies["rectangle"]->GetPosition() +
 								b2Vec2(-mov_vec.x * speed * deltaTime,-mov_vec.y * speed * deltaTime),
