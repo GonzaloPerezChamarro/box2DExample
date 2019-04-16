@@ -125,6 +125,7 @@ namespace example
 				if (!p.update(deltaTime))
 				{
 					particles.free_object(&p);
+
 				}
 			}
 			emission(deltaTime);
@@ -161,7 +162,8 @@ namespace example
 			{
 				Part * p = particles.get_free_object();
 				if(p)
-					p->reset(sf::Vector2f(615, 620));
+					p->reset(sf::Vector2f(615, 625));
+
 				current_time = 0.f;
 			}
 		}
