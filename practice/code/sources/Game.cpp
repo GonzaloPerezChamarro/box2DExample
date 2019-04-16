@@ -26,6 +26,7 @@ namespace example
 
 		Listener * listener = new Listener;
 		scene->get_world().SetContactListener(listener);
+		scene->set_game(this);
 
 	}
 
@@ -69,11 +70,14 @@ namespace example
 
 	void Game::reset()
 	{
+		scene->get_entity_by_name("ball")->reset();
+		scene->get_entity_by_name("vehicle")->reset();
 	}
 
 	void Game::generate_world()
 	{
 		scene->add_entity("ball", sh_Entity(new Circle(100.f, 300.f, 17.f, scene)));
+		scene->get_entity_by_name("ball")->set_tag("ball");
 
 		//Suelo principal
 		scene->add_entity("floor01", sh_Entity(new Rectangle(scene, 55.f, 50.f, 110.f, 100.f)));
@@ -109,7 +113,7 @@ namespace example
 		scene->add_entity("hook", sh_Entity(new Hook(scene, 600.f, 390.f)));
 
 		//FIRE
-		scene->add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(scene, b2Vec2(650.f, 650.f), 10, 0.4f)));
+		scene->add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(scene, b2Vec2(63.f, 12.f), 10, 0.4f)));
 	}
 	
 

@@ -62,6 +62,7 @@ namespace example
 		 * 
 		 */
 		bool enabled;
+		std::string tag = "none";
 
 	public:
 		/**
@@ -76,6 +77,8 @@ namespace example
 		 * 
 		 */
 		virtual ~Entity();
+
+
 
 	public:
 		/**
@@ -108,13 +111,14 @@ namespace example
 		 * @brief Metodo virtual puro llamado al entrar en colision
 		 * 
 		 */
-		virtual void collision_enter() = 0;
-
+		virtual void collision_enter(Entity*) = 0;
 		/**
 		 * @brief Metodo virtual puro llamado al salir de una colision
 		 * 
 		 */
-		virtual void collision_exit() = 0;
+		virtual void collision_exit(Entity*) = 0;
+
+		virtual void reset() {}
 
 		/**
 		 * @brief Modifica el valor de color 
@@ -139,6 +143,8 @@ namespace example
 		 * @param b 
 		 */
 		void set_enabled(bool b) { enabled = b; }
+		void set_tag(std::string t) { tag = t; }
+		std::string get_tag() const { return tag; }
 
 	protected:
 

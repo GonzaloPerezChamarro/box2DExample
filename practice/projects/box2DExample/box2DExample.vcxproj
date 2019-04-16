@@ -150,7 +150,6 @@
     <ClCompile Include="..\..\code\sources\Hook.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Particle.cpp" />
-    <ClCompile Include="..\..\code\sources\ParticleSystem.cpp" />
     <ClCompile Include="..\..\code\sources\Platform.cpp" />
     <ClCompile Include="..\..\code\sources\Pool.cpp" />
     <ClCompile Include="..\..\code\sources\Rectangle.cpp" />

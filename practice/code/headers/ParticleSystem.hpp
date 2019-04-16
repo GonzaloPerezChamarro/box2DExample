@@ -68,9 +68,30 @@ namespace example
 		 * @param emission_rate Tiempo de emision
 		 */
 		Particle_System(Scene * scene, b2Vec2 pos, size_t particles_count, float emission_rate)
-			: Entity(scene), particles(particles_count), position(pos), initial_particles(particles_count), emission_rate(emission_rate), current_time(0.f)
+			: Entity(scene), particles(particles_count), initial_particles(particles_count), emission_rate(emission_rate), current_time(0.f)
 		{
+			float pixels_scaled = scene->scale_pixels_to_sfml();
 
+
+			b2BodyDef body;
+			body.type = b2_staticBody;
+			body.fixedRotation = false;
+
+			position = pos;
+			body.position.Set(position.x, position.y);
+			body.userData = this;
+			
+
+			bodies["trigger"] = scene->get_world().CreateBody(&body);
+
+			b2PolygonShape shape;
+			b2FixtureDef fixture;
+			shape.SetAsBox(23 * pixels_scaled,50 * pixels_scaled);
+			fixture.shape = &shape;
+			fixture.isSensor = true;
+
+			bodies["trigger"]->CreateFixture(&fixture);
+			set_color(sf::Color::Black);
 		}
 
 		/**
@@ -81,8 +102,15 @@ namespace example
 		{}
 
 
-		void collision_enter() {}
-		void collision_exit() {}
+		void collision_enter(Entity* e)override 
+		{
+			std::cout << e->get_tag() << std::endl;
+			if (e->get_tag() == "ball")
+			{
+				scene->set_have_to_reset(true);
+			}
+		}
+		void collision_exit(Entity* e) override{}
 
 		/**
 		 * @brief Actualizado de las particulas y su emision
@@ -109,6 +137,8 @@ namespace example
 		 */
 		void render(sf::RenderWindow & renderer) override
 		{
+			__super::render(renderer);
+			
 			for (auto & particle : particles)
 			{
 				Part & p = particle;
@@ -131,7 +161,7 @@ namespace example
 			{
 				Part * p = particles.get_free_object();
 				if(p)
-					p->reset(sf::Vector2f(position.x + 0, position.y + 0));
+					p->reset(sf::Vector2f(615, 620));
 				current_time = 0.f;
 			}
 		}

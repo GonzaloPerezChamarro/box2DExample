@@ -39,11 +39,11 @@ namespace example
 	{
 		//nothing
 	}
-	void Rectangle::collision_enter()
+	void Rectangle::collision_enter(Entity* e)
 	{
 		//nothing
 	}
-	void Rectangle::collision_exit()
+	void Rectangle::collision_exit(Entity*e)
 	{
 		//nothing
 	}

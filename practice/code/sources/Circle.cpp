@@ -16,6 +16,7 @@ namespace example
 		position.x = x* pixels_scaled;
 		position.y = y* pixels_scaled;
 		body.position.Set(position.x, position.y);
+		body.userData = this;
 
 		bodies["circle"] = scene->get_world().CreateBody(&body);
 
@@ -31,19 +32,22 @@ namespace example
 
 		set_color(sf::Color::Magenta);
 
-
 	}
 
 	void Circle::update(float deltaTime)
 	{
 		//nothing
 	}
-	void Circle::collision_enter()
+	void Circle::collision_enter(Entity* e)
 	{
 		//nothing
 	}
-	void Circle::collision_exit()
+	void Circle::collision_exit(Entity* e)
 	{
 		//nothing
+	}
+	void Circle::reset()
+	{
+		bodies["circle"]->SetTransform(position, 0.f);
 	}
 }

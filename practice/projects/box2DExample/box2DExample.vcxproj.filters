@@ -54,9 +54,6 @@
     <ClCompile Include="..\..\code\sources\Particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\ParticleSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\FireParticle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

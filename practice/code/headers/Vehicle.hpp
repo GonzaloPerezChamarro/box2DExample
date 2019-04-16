@@ -79,10 +79,11 @@ namespace example
 		 * @param deltaTime 
 		 */
 		void update(float deltaTime) override;
+		void reset() override;
 
 	public:
-		void collision_enter() override;
-		void collision_exit() override;
+		void collision_enter(Entity*) override;
+		void collision_exit(Entity*) override;
 
 		void set_motor_speed(float new_speed) { motor_speed = new_speed; }
 
