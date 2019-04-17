@@ -1,0 +1,103 @@
+\hypertarget{classexample_1_1_vehicle}{}\section{example\+::Vehicle Class Reference}
+\label{classexample_1_1_vehicle}\index{example::Vehicle@{example::Vehicle}}
+Inheritance diagram for example\+::Vehicle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_vehicle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_vehicle_a3ff0df156297d50fb261d04507486857}{Vehicle}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}, float x, float y)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_vehicle}{Vehicle}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_vehicle_a6fcb41bf4274c7bbc1fb0957b770d65a}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Modifica en caso necesario la velocidad del vehiculo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_vehicle_aefbbdc8bdab57675ff484baa9a1ff15c}\label{classexample_1_1_vehicle_aefbbdc8bdab57675ff484baa9a1ff15c}} 
+void {\bfseries reset} () override
+\item 
+void \mbox{\hyperlink{classexample_1_1_vehicle_af1a5fe70938e564d67b69487938f6f63}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_vehicle_ae8eeaa80a8a50a6402b313efca1dadba}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_vehicle_ad870ec1cb64e8eef59182d444cce8050}\label{classexample_1_1_vehicle_ad870ec1cb64e8eef59182d444cce8050}} 
+void {\bfseries set\+\_\+motor\+\_\+speed} (float new\+\_\+speed)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_vehicle_a3ff0df156297d50fb261d04507486857}\label{classexample_1_1_vehicle_a3ff0df156297d50fb261d04507486857}} 
+\index{example::Vehicle@{example::Vehicle}!Vehicle@{Vehicle}}
+\index{Vehicle@{Vehicle}!example::Vehicle@{example::Vehicle}}
+\subsubsection{\texorpdfstring{Vehicle()}{Vehicle()}}
+{\footnotesize\ttfamily example\+::\+Vehicle\+::\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_vehicle}{Vehicle}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em x} & Posicion x \\
+\hline
+{\em y} & Posicion y \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_vehicle_af1a5fe70938e564d67b69487938f6f63}\label{classexample_1_1_vehicle_af1a5fe70938e564d67b69487938f6f63}} 
+\index{example::Vehicle@{example::Vehicle}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Vehicle@{example::Vehicle}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily void example\+::\+Vehicle\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_vehicle_ae8eeaa80a8a50a6402b313efca1dadba}\label{classexample_1_1_vehicle_ae8eeaa80a8a50a6402b313efca1dadba}} 
+\index{example::Vehicle@{example::Vehicle}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Vehicle@{example::Vehicle}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily void example\+::\+Vehicle\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_vehicle_a6fcb41bf4274c7bbc1fb0957b770d65a}\label{classexample_1_1_vehicle_a6fcb41bf4274c7bbc1fb0957b770d65a}} 
+\index{example::Vehicle@{example::Vehicle}!update@{update}}
+\index{update@{update}!example::Vehicle@{example::Vehicle}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Vehicle\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Modifica en caso necesario la velocidad del vehiculo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{example\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_vehicle_8hpp}{Vehicle.\+hpp}}\end{DoxyCompactItemize}

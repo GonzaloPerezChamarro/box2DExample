@@ -1,0 +1,78 @@
+\hypertarget{classexample_1_1_scene}{}\section{example\+::Scene Class Reference}
+\label{classexample_1_1_scene}\index{example::Scene@{example::Scene}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_scene_a1fe6da262ba4c25503c19eb5e8637190}{Scene}} (int width, int height, float scale, float gravity)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_scene}{Scene}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a0e90063ee88a217dac88ab964a7dab74}\label{classexample_1_1_scene_a0e90063ee88a217dac88ab964a7dab74}} 
+void {\bfseries update} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a1f78f6222b05a7811d77d4840f3346fc}\label{classexample_1_1_scene_a1f78f6222b05a7811d77d4840f3346fc}} 
+void {\bfseries render} (sf\+::\+Render\+Window \&renderer)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a8bf30ba2aaed0eee5538dc51df64c6e1}\label{classexample_1_1_scene_a8bf30ba2aaed0eee5538dc51df64c6e1}} 
+b2\+World \& {\bfseries get\+\_\+world} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_ac29a51e28d223428f95a23b48bc02710}\label{classexample_1_1_scene_ac29a51e28d223428f95a23b48bc02710}} 
+int {\bfseries get\+\_\+width} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a3ff2b375c40031835ed6f94910f74094}\label{classexample_1_1_scene_a3ff2b375c40031835ed6f94910f74094}} 
+int {\bfseries get\+\_\+height} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a700d51c305e0762472c69e3ae8fcc97f}\label{classexample_1_1_scene_a700d51c305e0762472c69e3ae8fcc97f}} 
+float {\bfseries get\+\_\+scale} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a39dd7f357b227855409fd54fc73025ce}\label{classexample_1_1_scene_a39dd7f357b227855409fd54fc73025ce}} 
+float {\bfseries get\+\_\+gravity} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a3e746bedf9e26c8284a7d26524140b37}\label{classexample_1_1_scene_a3e746bedf9e26c8284a7d26524140b37}} 
+float {\bfseries scale\+\_\+pixels\+\_\+to\+\_\+sfml} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a5b5b9cac22eb646b11638826f665443a}\label{classexample_1_1_scene_a5b5b9cac22eb646b11638826f665443a}} 
+void {\bfseries set\+\_\+game} (\mbox{\hyperlink{classexample_1_1_game}{Game}} $\ast$g)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_ad25de930868da9c2da3850603327454b}\label{classexample_1_1_scene_ad25de930868da9c2da3850603327454b}} 
+\mbox{\hyperlink{classexample_1_1_game}{Game}} $\ast$ {\bfseries get\+\_\+game} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_aef7c8aa7d2e11e950af439b8e5a45e1d}\label{classexample_1_1_scene_aef7c8aa7d2e11e950af439b8e5a45e1d}} 
+void {\bfseries set\+\_\+have\+\_\+to\+\_\+reset} (bool b)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a2d5d63db1f3b6f1b2c50d4c8f9a9a214}\label{classexample_1_1_scene_a2d5d63db1f3b6f1b2c50d4c8f9a9a214}} 
+void {\bfseries add\+\_\+entity} (const std\+::string name, const sh\+\_\+\+Entity \&entity)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_aa70b6f4d4ceb7fe2200622f9527a7ee8}\label{classexample_1_1_scene_aa70b6f4d4ceb7fe2200622f9527a7ee8}} 
+\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$ {\bfseries get\+\_\+entity\+\_\+by\+\_\+name} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classexample_1_1_scene_a2683af25615bc76b92ce5f14c160ee22}\label{classexample_1_1_scene_a2683af25615bc76b92ce5f14c160ee22}} 
+void {\bfseries set\+\_\+particle\+\_\+system} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$scene, sf\+::\+Vector2i position, sf\+::\+Vector2f direction, size\+\_\+t num\+\_\+\+Particles)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_scene_a1fe6da262ba4c25503c19eb5e8637190}\label{classexample_1_1_scene_a1fe6da262ba4c25503c19eb5e8637190}} 
+\index{example::Scene@{example::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!example::Scene@{example::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily example\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{float}]{scale,  }\item[{float}]{gravity }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em scale} & \\
+\hline
+{\em gravity} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{classexample_1_1_hook}{}\section{example\+::Hook Class Reference}
+\label{classexample_1_1_hook}\index{example::Hook@{example::Hook}}
+Inheritance diagram for example\+::Hook\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_hook}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_hook_a0e6c26e988930a4c27ffca4999f78d3f}{Hook}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}, float x, float y)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_hook}{Hook}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_hook_a23c335b2ccc707a1444109a849d8020e}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado y gestiona el movimiento. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_hook_a44bba68a70104e45a890311d5edd91a0}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_hook_a329b5437b6a05c621b8d0be35e326bb5}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_hook_a0e6c26e988930a4c27ffca4999f78d3f}\label{classexample_1_1_hook_a0e6c26e988930a4c27ffca4999f78d3f}} 
+\index{example::Hook@{example::Hook}!Hook@{Hook}}
+\index{Hook@{Hook}!example::Hook@{example::Hook}}
+\subsubsection{\texorpdfstring{Hook()}{Hook()}}
+{\footnotesize\ttfamily example\+::\+Hook\+::\+Hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_hook}{Hook}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em x} & Posicion X \\
+\hline
+{\em y} & Posicion Y \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_hook_a44bba68a70104e45a890311d5edd91a0}\label{classexample_1_1_hook_a44bba68a70104e45a890311d5edd91a0}} 
+\index{example::Hook@{example::Hook}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Hook@{example::Hook}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily void example\+::\+Hook\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_hook_a329b5437b6a05c621b8d0be35e326bb5}\label{classexample_1_1_hook_a329b5437b6a05c621b8d0be35e326bb5}} 
+\index{example::Hook@{example::Hook}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Hook@{example::Hook}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily void example\+::\+Hook\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_hook_a23c335b2ccc707a1444109a849d8020e}\label{classexample_1_1_hook_a23c335b2ccc707a1444109a849d8020e}} 
+\index{example::Hook@{example::Hook}!update@{update}}
+\index{update@{update}!example::Hook@{example::Hook}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Hook\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado y gestiona el movimiento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{example\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_hook_8hpp}{Hook.\+hpp}}\end{DoxyCompactItemize}

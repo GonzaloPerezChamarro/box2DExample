@@ -1,0 +1,123 @@
+\hypertarget{classexample_1_1_rectangle}{}\section{example\+::Rectangle Class Reference}
+\label{classexample_1_1_rectangle}\index{example::Rectangle@{example::Rectangle}}
+Inheritance diagram for example\+::Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classexample_1_1_rectangle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_rectangle_a5de4b398c9343b9a78af13098339fe65}{Rectangle}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}, float x, float y, float hx, float hy, float angle=0.f, b2\+Body\+Type type=b2\+\_\+static\+Body)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_rectangle}{Rectangle}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_rectangle_a346951183565830ee4b262c8c66f2673}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado cada frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_rectangle_a60fa2e1468370d1c7021f25df8a4c1d7}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_rectangle_a547c35d87f139ffc190f542830606754}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexample_1_1_rectangle_a0a68ae0e3f9b3ea9d1d9090d587e1acc}\label{classexample_1_1_rectangle_a0a68ae0e3f9b3ea9d1d9090d587e1acc}} 
+float {\bfseries angle\+\_\+in\+\_\+rad}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_rectangle_a5de4b398c9343b9a78af13098339fe65}\label{classexample_1_1_rectangle_a5de4b398c9343b9a78af13098339fe65}} 
+\index{example::Rectangle@{example::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!example::Rectangle@{example::Rectangle}}
+\subsubsection{\texorpdfstring{Rectangle()}{Rectangle()}}
+{\footnotesize\ttfamily example\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{hx,  }\item[{float}]{hy,  }\item[{float}]{angle = {\ttfamily 0.f},  }\item[{b2\+Body\+Type}]{type = {\ttfamily b2\+\_\+staticBody} }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_rectangle}{Rectangle}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em x} & Posicion x \\
+\hline
+{\em y} & Posicion y \\
+\hline
+{\em hx} & ancho \\
+\hline
+{\em hy} & alto \\
+\hline
+{\em angle} & angulo de rotacion \\
+\hline
+{\em type} & tipo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_rectangle_a60fa2e1468370d1c7021f25df8a4c1d7}\label{classexample_1_1_rectangle_a60fa2e1468370d1c7021f25df8a4c1d7}} 
+\index{example::Rectangle@{example::Rectangle}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Rectangle@{example::Rectangle}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily void example\+::\+Rectangle\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}{example\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classexample_1_1_sensor_a3134d06af95de83a7392c3687411eb17}{example\+::\+Sensor}}.
+
+\mbox{\Hypertarget{classexample_1_1_rectangle_a547c35d87f139ffc190f542830606754}\label{classexample_1_1_rectangle_a547c35d87f139ffc190f542830606754}} 
+\index{example::Rectangle@{example::Rectangle}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Rectangle@{example::Rectangle}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily void example\+::\+Rectangle\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}{example\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classexample_1_1_sensor_a0bc1b5c11b00ac855c35863ffc9c70d9}{example\+::\+Sensor}}.
+
+\mbox{\Hypertarget{classexample_1_1_rectangle_a346951183565830ee4b262c8c66f2673}\label{classexample_1_1_rectangle_a346951183565830ee4b262c8c66f2673}} 
+\index{example::Rectangle@{example::Rectangle}!update@{update}}
+\index{update@{update}!example::Rectangle@{example::Rectangle}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Rectangle\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{example\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classexample_1_1_sensor_a6db61100875509315537c46418fbc250}{example\+::\+Sensor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_rectangle_8hpp}{Rectangle.\+hpp}}\end{DoxyCompactItemize}

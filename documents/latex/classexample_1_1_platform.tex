@@ -1,0 +1,109 @@
+\hypertarget{classexample_1_1_platform}{}\section{example\+::Platform Class Reference}
+\label{classexample_1_1_platform}\index{example::Platform@{example::Platform}}
+Inheritance diagram for example\+::Platform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classexample_1_1_platform}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_platform_a561d39d565ea2867f412143e3bbef07a}{Platform}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}, float x, float y, float hx, float hy, b2\+Vec2 offset, float speed, float angle=0.f)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_platform}{Platform}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_platform_a70a40dddbd963080b45d086f79c88b3e}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado cada frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_platform_a8937b48574c62d1d9c3ccde8afad8d47}{set\+\_\+have\+\_\+to\+\_\+move}} (bool b)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de have to move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_platform_a9e3f17752c041210ef9d4b21bf6e2001}{is\+\_\+stopped}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve si la plataforma esta parada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_platform_a561d39d565ea2867f412143e3bbef07a}\label{classexample_1_1_platform_a561d39d565ea2867f412143e3bbef07a}} 
+\index{example::Platform@{example::Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!example::Platform@{example::Platform}}
+\subsubsection{\texorpdfstring{Platform()}{Platform()}}
+{\footnotesize\ttfamily example\+::\+Platform\+::\+Platform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{hx,  }\item[{float}]{hy,  }\item[{b2\+Vec2}]{offset,  }\item[{float}]{speed,  }\item[{float}]{angle = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_platform}{Platform}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em x} & posicion x \\
+\hline
+{\em y} & posicion y \\
+\hline
+{\em hx} & ancho \\
+\hline
+{\em hy} & largo \\
+\hline
+{\em offset} & target \\
+\hline
+{\em speed} & velocidad \\
+\hline
+{\em angle} & angulo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_platform_a9e3f17752c041210ef9d4b21bf6e2001}\label{classexample_1_1_platform_a9e3f17752c041210ef9d4b21bf6e2001}} 
+\index{example::Platform@{example::Platform}!is\_stopped@{is\_stopped}}
+\index{is\_stopped@{is\_stopped}!example::Platform@{example::Platform}}
+\subsubsection{\texorpdfstring{is\_stopped()}{is\_stopped()}}
+{\footnotesize\ttfamily bool example\+::\+Platform\+::is\+\_\+stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve si la plataforma esta parada. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_platform_a8937b48574c62d1d9c3ccde8afad8d47}\label{classexample_1_1_platform_a8937b48574c62d1d9c3ccde8afad8d47}} 
+\index{example::Platform@{example::Platform}!set\_have\_to\_move@{set\_have\_to\_move}}
+\index{set\_have\_to\_move@{set\_have\_to\_move}!example::Platform@{example::Platform}}
+\subsubsection{\texorpdfstring{set\_have\_to\_move()}{set\_have\_to\_move()}}
+{\footnotesize\ttfamily void example\+::\+Platform\+::set\+\_\+have\+\_\+to\+\_\+move (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+Modifica el valor de have to move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_platform_a70a40dddbd963080b45d086f79c88b3e}\label{classexample_1_1_platform_a70a40dddbd963080b45d086f79c88b3e}} 
+\index{example::Platform@{example::Platform}!update@{update}}
+\index{update@{update}!example::Platform@{example::Platform}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Platform\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{example\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_platform_8hpp}{Platform.\+hpp}}\end{DoxyCompactItemize}

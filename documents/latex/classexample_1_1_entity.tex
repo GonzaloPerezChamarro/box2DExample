@@ -1,0 +1,304 @@
+\hypertarget{classexample_1_1_entity}{}\section{example\+::Entity Class Reference}
+\label{classexample_1_1_entity}\index{example::Entity@{example::Entity}}
+Inheritance diagram for example\+::Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.371429cm]{classexample_1_1_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_entity_aa2154c66b8b0142ef510137bb67e643b}{Entity}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}})
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_entity}{Entity}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classexample_1_1_entity_a7ad532833fe996de3a728570b70a2c1d}{$\sim$\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \mbox{\hyperlink{classexample_1_1_entity}{Entity}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{update}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado cada frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classexample_1_1_entity_a44477ee1f9ac52e9073ae0f78ba735d5}{render}} (sf\+::\+Render\+Window \&renderer)
+\begin{DoxyCompactList}\small\item\em Metodo de renderizado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$ \mbox{\hyperlink{classexample_1_1_entity_a6d32a518949bb42bed3d13377c2ab7ad}{get\+\_\+scene}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve puntero a la escena. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_entity_a696e76a3e1e0c89bfb9961a1cac10ad3}\label{classexample_1_1_entity_a696e76a3e1e0c89bfb9961a1cac10ad3}} 
+virtual void {\bfseries reset} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_entity_a290e01f28b2d6f738d21372145a108ed}{set\+\_\+color}} (const sf\+::\+Color c)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de color. \end{DoxyCompactList}\item 
+const b2\+Vec2 \& \mbox{\hyperlink{classexample_1_1_entity_a0cbe31d17b04210ce4d4950937fe0002}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_entity_aa36de06895a962d04571610424ebd68e}{set\+\_\+enabled}} (bool b)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de enabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_entity_a802f2635ff46a85c39a7dbf60411443c}\label{classexample_1_1_entity_a802f2635ff46a85c39a7dbf60411443c}} 
+void {\bfseries set\+\_\+tag} (std\+::string t)
+\item 
+\mbox{\Hypertarget{classexample_1_1_entity_a570fe3caa008749ca920749ce89eb55f}\label{classexample_1_1_entity_a570fe3caa008749ca920749ce89eb55f}} 
+std\+::string {\bfseries get\+\_\+tag} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classexample_1_1_entity_a4cddc45f96fdd98d7b1437cd0379b6c4}{convert\+\_\+to\+\_\+sfml\+\_\+pos}} (const b2\+Vec2 \&pos, float windows\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Convierte la posicion recibida a posicion de sfml. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, b2\+Body $\ast$ $>$ \mbox{\hyperlink{classexample_1_1_entity_aa5cc086c278afb464fc8df85df9e51de}{bodies}}
+\begin{DoxyCompactList}\small\item\em Mapa de b2\+Body de la entidad. \end{DoxyCompactList}\item 
+map$<$ string, b2\+Joint $\ast$ $>$ \mbox{\hyperlink{classexample_1_1_entity_a0024a9c16ac5758786cb3ce837fb2926}{joints}}
+\begin{DoxyCompactList}\small\item\em Mapa de joints de la entidad. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$ \mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}
+\begin{DoxyCompactList}\small\item\em Puntero a la escena principal. \end{DoxyCompactList}\item 
+b2\+Vec2 \mbox{\hyperlink{classexample_1_1_entity_abfa8b41527466a41500b59393faec19a}{position}}
+\begin{DoxyCompactList}\small\item\em Vector de posicion inicial. \end{DoxyCompactList}\item 
+sf\+::\+Color \mbox{\hyperlink{classexample_1_1_entity_a400506e62c4c521965aaa26b536b32e7}{color}}
+\begin{DoxyCompactList}\small\item\em Color de los bodies de la entidad. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_entity_aa406d8aad67b8e5778f78e2c34e8adb9}{enabled}}
+\begin{DoxyCompactList}\small\item\em Indica el estado de actividad de la entidad. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_entity_a7f232e71ab36c200029dfe1289a96e51}\label{classexample_1_1_entity_a7f232e71ab36c200029dfe1289a96e51}} 
+std\+::string {\bfseries tag} = \char`\"{}none\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_entity_aa2154c66b8b0142ef510137bb67e643b}\label{classexample_1_1_entity_aa2154c66b8b0142ef510137bb67e643b}} 
+\index{example::Entity@{example::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily example\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_entity}{Entity}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_entity_a7ad532833fe996de3a728570b70a2c1d}\label{classexample_1_1_entity_a7ad532833fe996de3a728570b70a2c1d}} 
+\index{example::Entity@{example::Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily virtual example\+::\+Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor de \mbox{\hyperlink{classexample_1_1_entity}{Entity}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}\label{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}} 
+\index{example::Entity@{example::Entity}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily virtual void example\+::\+Entity\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_particle___system_a7abd68650036023393e7bb7cc5d28d49}{example\+::\+Particle\+\_\+\+System$<$ P\+A\+R\+T\+I\+C\+L\+E $>$}}, \mbox{\hyperlink{classexample_1_1_vehicle_af1a5fe70938e564d67b69487938f6f63}{example\+::\+Vehicle}}, \mbox{\hyperlink{classexample_1_1_sensor_a3134d06af95de83a7392c3687411eb17}{example\+::\+Sensor}}, \mbox{\hyperlink{classexample_1_1_hook_a44bba68a70104e45a890311d5edd91a0}{example\+::\+Hook}}, \mbox{\hyperlink{classexample_1_1_rectangle_a60fa2e1468370d1c7021f25df8a4c1d7}{example\+::\+Rectangle}}, and \mbox{\hyperlink{classexample_1_1_circle_a098e101e7fe49694bf9f26749d48e62e}{example\+::\+Circle}}.
+
+\mbox{\Hypertarget{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}\label{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}} 
+\index{example::Entity@{example::Entity}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily virtual void example\+::\+Entity\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_particle___system_a82dfe08a8910532c5cd6a0a50fb79f23}{example\+::\+Particle\+\_\+\+System$<$ P\+A\+R\+T\+I\+C\+L\+E $>$}}, \mbox{\hyperlink{classexample_1_1_vehicle_ae8eeaa80a8a50a6402b313efca1dadba}{example\+::\+Vehicle}}, \mbox{\hyperlink{classexample_1_1_sensor_a0bc1b5c11b00ac855c35863ffc9c70d9}{example\+::\+Sensor}}, \mbox{\hyperlink{classexample_1_1_hook_a329b5437b6a05c621b8d0be35e326bb5}{example\+::\+Hook}}, \mbox{\hyperlink{classexample_1_1_rectangle_a547c35d87f139ffc190f542830606754}{example\+::\+Rectangle}}, and \mbox{\hyperlink{classexample_1_1_circle_ab8570fcf0357a37d6f9f354c0d02c725}{example\+::\+Circle}}.
+
+\mbox{\Hypertarget{classexample_1_1_entity_a4cddc45f96fdd98d7b1437cd0379b6c4}\label{classexample_1_1_entity_a4cddc45f96fdd98d7b1437cd0379b6c4}} 
+\index{example::Entity@{example::Entity}!convert\_to\_sfml\_pos@{convert\_to\_sfml\_pos}}
+\index{convert\_to\_sfml\_pos@{convert\_to\_sfml\_pos}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{convert\_to\_sfml\_pos()}{convert\_to\_sfml\_pos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f example\+::\+Entity\+::convert\+\_\+to\+\_\+sfml\+\_\+pos (\begin{DoxyParamCaption}\item[{const b2\+Vec2 \&}]{pos,  }\item[{float}]{windows\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Convierte la posicion recibida a posicion de sfml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Vector de posicion \\
+\hline
+{\em windows\+\_\+height} & altura de la ventana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sf\+::\+Vector2f 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_entity_a0cbe31d17b04210ce4d4950937fe0002}\label{classexample_1_1_entity_a0cbe31d17b04210ce4d4950937fe0002}} 
+\index{example::Entity@{example::Entity}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily const b2\+Vec2\& example\+::\+Entity\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve position. 
+
+\begin{DoxyReturn}{Returns}
+const b2\+Vec2\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_entity_a6d32a518949bb42bed3d13377c2ab7ad}\label{classexample_1_1_entity_a6d32a518949bb42bed3d13377c2ab7ad}} 
+\index{example::Entity@{example::Entity}!get\_scene@{get\_scene}}
+\index{get\_scene@{get\_scene}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{get\_scene()}{get\_scene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_scene}{Scene}}$\ast$ example\+::\+Entity\+::get\+\_\+scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve puntero a la escena. 
+
+\begin{DoxyReturn}{Returns}
+Scene$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_entity_a44477ee1f9ac52e9073ae0f78ba735d5}\label{classexample_1_1_entity_a44477ee1f9ac52e9073ae0f78ba735d5}} 
+\index{example::Entity@{example::Entity}!render@{render}}
+\index{render@{render}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void example\+::\+Entity\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{renderer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Metodo de renderizado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classexample_1_1_particle___system_aed070ca0042af0428dd942fe4f1e0241}{example\+::\+Particle\+\_\+\+System$<$ P\+A\+R\+T\+I\+C\+L\+E $>$}}.
+
+\mbox{\Hypertarget{classexample_1_1_entity_a290e01f28b2d6f738d21372145a108ed}\label{classexample_1_1_entity_a290e01f28b2d6f738d21372145a108ed}} 
+\index{example::Entity@{example::Entity}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily void example\+::\+Entity\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{const sf\+::\+Color}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_entity_aa36de06895a962d04571610424ebd68e}\label{classexample_1_1_entity_aa36de06895a962d04571610424ebd68e}} 
+\index{example::Entity@{example::Entity}!set\_enabled@{set\_enabled}}
+\index{set\_enabled@{set\_enabled}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{set\_enabled()}{set\_enabled()}}
+{\footnotesize\ttfamily void example\+::\+Entity\+::set\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}\label{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}} 
+\index{example::Entity@{example::Entity}!update@{update}}
+\index{update@{update}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void example\+::\+Entity\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Metodo virtual puro llamado cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classexample_1_1_particle___system_a28602cfbbff3c7762da1ccbc7324f8f8}{example\+::\+Particle\+\_\+\+System$<$ P\+A\+R\+T\+I\+C\+L\+E $>$}}, \mbox{\hyperlink{classexample_1_1_vehicle_a6fcb41bf4274c7bbc1fb0957b770d65a}{example\+::\+Vehicle}}, \mbox{\hyperlink{classexample_1_1_platform_a70a40dddbd963080b45d086f79c88b3e}{example\+::\+Platform}}, \mbox{\hyperlink{classexample_1_1_sensor_a6db61100875509315537c46418fbc250}{example\+::\+Sensor}}, \mbox{\hyperlink{classexample_1_1_hook_a23c335b2ccc707a1444109a849d8020e}{example\+::\+Hook}}, \mbox{\hyperlink{classexample_1_1_rectangle_a346951183565830ee4b262c8c66f2673}{example\+::\+Rectangle}}, and \mbox{\hyperlink{classexample_1_1_circle_a49dfe984ad6e169dae2a651d79951475}{example\+::\+Circle}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_entity_aa5cc086c278afb464fc8df85df9e51de}\label{classexample_1_1_entity_aa5cc086c278afb464fc8df85df9e51de}} 
+\index{example::Entity@{example::Entity}!bodies@{bodies}}
+\index{bodies@{bodies}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{bodies}{bodies}}
+{\footnotesize\ttfamily map$<$string, b2\+Body$\ast$$>$ example\+::\+Entity\+::bodies\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mapa de b2\+Body de la entidad. 
+
+\mbox{\Hypertarget{classexample_1_1_entity_a400506e62c4c521965aaa26b536b32e7}\label{classexample_1_1_entity_a400506e62c4c521965aaa26b536b32e7}} 
+\index{example::Entity@{example::Entity}!color@{color}}
+\index{color@{color}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily sf\+::\+Color example\+::\+Entity\+::color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Color de los bodies de la entidad. 
+
+\mbox{\Hypertarget{classexample_1_1_entity_aa406d8aad67b8e5778f78e2c34e8adb9}\label{classexample_1_1_entity_aa406d8aad67b8e5778f78e2c34e8adb9}} 
+\index{example::Entity@{example::Entity}!enabled@{enabled}}
+\index{enabled@{enabled}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{enabled}{enabled}}
+{\footnotesize\ttfamily bool example\+::\+Entity\+::enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indica el estado de actividad de la entidad. 
+
+\mbox{\Hypertarget{classexample_1_1_entity_a0024a9c16ac5758786cb3ce837fb2926}\label{classexample_1_1_entity_a0024a9c16ac5758786cb3ce837fb2926}} 
+\index{example::Entity@{example::Entity}!joints@{joints}}
+\index{joints@{joints}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{joints}{joints}}
+{\footnotesize\ttfamily map$<$string, b2\+Joint $\ast$$>$ example\+::\+Entity\+::joints\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mapa de joints de la entidad. 
+
+\mbox{\Hypertarget{classexample_1_1_entity_abfa8b41527466a41500b59393faec19a}\label{classexample_1_1_entity_abfa8b41527466a41500b59393faec19a}} 
+\index{example::Entity@{example::Entity}!position@{position}}
+\index{position@{position}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily b2\+Vec2 example\+::\+Entity\+::position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector de posicion inicial. 
+
+\mbox{\Hypertarget{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}\label{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}} 
+\index{example::Entity@{example::Entity}!scene@{scene}}
+\index{scene@{scene}!example::Entity@{example::Entity}}
+\subsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_scene}{Scene}}$\ast$ example\+::\+Entity\+::scene\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Puntero a la escena principal. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_8hpp}{Entity.\+hpp}}\end{DoxyCompactItemize}

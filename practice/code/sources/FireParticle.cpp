@@ -7,7 +7,7 @@ namespace example
 	Fire_Particle::Fire_Particle()
 	{
 		direction = sf::Vector2f(0.f, -1.f);
-		speed = rand() % 12 + 20;
+		speed = rand() % 12 + 20.f;
 		color = sf::Color::Red;
 		color = sf::Color(255, rand() % 120, rand() %100, rand() % 100 + 155);
 		end_color = sf::Color::Yellow;
@@ -36,6 +36,7 @@ namespace example
 											delta_color.g * (current_life_time),
 											delta_color.b * (current_life_time)));*/
 		
+
 
 		shape.setFillColor(current_color);
 		return current_life_time > 0.f;

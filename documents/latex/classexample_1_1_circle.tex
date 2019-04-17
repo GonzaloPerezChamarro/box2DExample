@@ -1,0 +1,102 @@
+\hypertarget{classexample_1_1_circle}{}\section{example\+::Circle Class Reference}
+\label{classexample_1_1_circle}\index{example::Circle@{example::Circle}}
+Inheritance diagram for example\+::Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_circle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_circle_a1503756ba54426530f6aaa51925c2cac}{Circle}} (float x, float y, float radius, \mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}})
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_circle}{Circle}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_circle_a49dfe984ad6e169dae2a651d79951475}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado cada frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_circle_a098e101e7fe49694bf9f26749d48e62e}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_circle_ab8570fcf0357a37d6f9f354c0d02c725}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_circle_a6f6912aba7e64f5a38fb8a246fe91bba}\label{classexample_1_1_circle_a6f6912aba7e64f5a38fb8a246fe91bba}} 
+void {\bfseries reset} () override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_circle_a1503756ba54426530f6aaa51925c2cac}\label{classexample_1_1_circle_a1503756ba54426530f6aaa51925c2cac}} 
+\index{example::Circle@{example::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!example::Circle@{example::Circle}}
+\subsubsection{\texorpdfstring{Circle()}{Circle()}}
+{\footnotesize\ttfamily example\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{radius,  }\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_circle}{Circle}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Posicion X \\
+\hline
+{\em y} & Posicion Y \\
+\hline
+{\em radius} & Radio \\
+\hline
+{\em scene} & Puntero a escena \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_circle_a098e101e7fe49694bf9f26749d48e62e}\label{classexample_1_1_circle_a098e101e7fe49694bf9f26749d48e62e}} 
+\index{example::Circle@{example::Circle}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Circle@{example::Circle}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily void example\+::\+Circle\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a09f6836192c2f8bce91a7b4f6934b94e}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_circle_ab8570fcf0357a37d6f9f354c0d02c725}\label{classexample_1_1_circle_ab8570fcf0357a37d6f9f354c0d02c725}} 
+\index{example::Circle@{example::Circle}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Circle@{example::Circle}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily void example\+::\+Circle\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_ae5d520b5f0dda6bb56a6c74eaf1c850c}{example\+::\+Entity}}.
+
+\mbox{\Hypertarget{classexample_1_1_circle_a49dfe984ad6e169dae2a651d79951475}\label{classexample_1_1_circle_a49dfe984ad6e169dae2a651d79951475}} 
+\index{example::Circle@{example::Circle}!update@{update}}
+\index{update@{update}!example::Circle@{example::Circle}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Circle\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_entity_a5dded5c361451f2cfdf7ed3c7de1194f}{example\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_circle_8hpp}{Circle.\+hpp}}\end{DoxyCompactItemize}

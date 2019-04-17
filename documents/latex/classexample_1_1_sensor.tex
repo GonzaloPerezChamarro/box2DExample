@@ -1,0 +1,171 @@
+\hypertarget{classexample_1_1_sensor}{}\section{example\+::Sensor Class Reference}
+\label{classexample_1_1_sensor}\index{example::Sensor@{example::Sensor}}
+Inheritance diagram for example\+::Sensor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classexample_1_1_sensor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_sensor_af43334a558e2faf4563b5624e6c33319}{Sensor}} (\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$\mbox{\hyperlink{classexample_1_1_entity_ab851dbde4a16829f9fb77ab9a66b9f1e}{scene}}, float x\+\_\+pltf, float y\+\_\+pltf, float hx, float hy, std\+::string platform\+\_\+name, float angle=0.f)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_sensor}{Sensor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_sensor_a6db61100875509315537c46418fbc250}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado cada frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_sensor_a3134d06af95de83a7392c3687411eb17}{collision\+\_\+enter}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al entrar en colision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_sensor_a0bc1b5c11b00ac855c35863ffc9c70d9}{collision\+\_\+exit}} (\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$) override
+\begin{DoxyCompactList}\small\item\em Metodo virtual puro llamado al salir de una colision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_platform}{Platform}} $\ast$ \mbox{\hyperlink{classexample_1_1_sensor_afb349009afdce990f4ce4728634e7b58}{platform}}
+\begin{DoxyCompactList}\small\item\em Puntero a la plataforma. \end{DoxyCompactList}\item 
+b2\+Vec2 \mbox{\hyperlink{classexample_1_1_sensor_a7cabbf4676f11e6cf6059ef84b4dc1e9}{offset}}
+\begin{DoxyCompactList}\small\item\em Offset de la plataforma. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_sensor_ac2e45c749b3c91d09da0aacd8b24db89}{delay}}
+\begin{DoxyCompactList}\small\item\em Tiempo de espera entre la entrada de la colision y el movimiento. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_sensor_aadf52308777810c4f22a96992ae6467c}{current\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Tiempo actual esperado. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_sensor_aa31ff020f203760129a64b931d844aed}{next\+\_\+mov}}
+\begin{DoxyCompactList}\small\item\em Indica si el siguiente movimiento es hacia el target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_sensor_af43334a558e2faf4563b5624e6c33319}\label{classexample_1_1_sensor_af43334a558e2faf4563b5624e6c33319}} 
+\index{example::Sensor@{example::Sensor}!Sensor@{Sensor}}
+\index{Sensor@{Sensor}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{Sensor()}{Sensor()}}
+{\footnotesize\ttfamily example\+::\+Sensor\+::\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_scene}{Scene}} $\ast$}]{scene,  }\item[{float}]{x\+\_\+pltf,  }\item[{float}]{y\+\_\+pltf,  }\item[{float}]{hx,  }\item[{float}]{hy,  }\item[{std\+::string}]{platform\+\_\+name,  }\item[{float}]{angle = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_sensor}{Sensor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & Puntero a la escena \\
+\hline
+{\em x\+\_\+pltf} & posicion del sensor \\
+\hline
+{\em y\+\_\+pltf} & posicion del sensor \\
+\hline
+{\em hx} & ancho \\
+\hline
+{\em hy} & alto \\
+\hline
+{\em platform\+\_\+name} & nombre de la entidad de la plataforma \\
+\hline
+{\em angle} & angulo de rotacion \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_sensor_a3134d06af95de83a7392c3687411eb17}\label{classexample_1_1_sensor_a3134d06af95de83a7392c3687411eb17}} 
+\index{example::Sensor@{example::Sensor}!collision\_enter@{collision\_enter}}
+\index{collision\_enter@{collision\_enter}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{collision\_enter()}{collision\_enter()}}
+{\footnotesize\ttfamily void example\+::\+Sensor\+::collision\+\_\+enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al entrar en colision. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_rectangle_a60fa2e1468370d1c7021f25df8a4c1d7}{example\+::\+Rectangle}}.
+
+\mbox{\Hypertarget{classexample_1_1_sensor_a0bc1b5c11b00ac855c35863ffc9c70d9}\label{classexample_1_1_sensor_a0bc1b5c11b00ac855c35863ffc9c70d9}} 
+\index{example::Sensor@{example::Sensor}!collision\_exit@{collision\_exit}}
+\index{collision\_exit@{collision\_exit}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{collision\_exit()}{collision\_exit()}}
+{\footnotesize\ttfamily void example\+::\+Sensor\+::collision\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_entity}{Entity}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado al salir de una colision. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_rectangle_a547c35d87f139ffc190f542830606754}{example\+::\+Rectangle}}.
+
+\mbox{\Hypertarget{classexample_1_1_sensor_a6db61100875509315537c46418fbc250}\label{classexample_1_1_sensor_a6db61100875509315537c46418fbc250}} 
+\index{example::Sensor@{example::Sensor}!update@{update}}
+\index{update@{update}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Sensor\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual puro llamado cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_rectangle_a346951183565830ee4b262c8c66f2673}{example\+::\+Rectangle}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_sensor_aadf52308777810c4f22a96992ae6467c}\label{classexample_1_1_sensor_aadf52308777810c4f22a96992ae6467c}} 
+\index{example::Sensor@{example::Sensor}!current\_time@{current\_time}}
+\index{current\_time@{current\_time}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{current\_time}{current\_time}}
+{\footnotesize\ttfamily float example\+::\+Sensor\+::current\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tiempo actual esperado. 
+
+\mbox{\Hypertarget{classexample_1_1_sensor_ac2e45c749b3c91d09da0aacd8b24db89}\label{classexample_1_1_sensor_ac2e45c749b3c91d09da0aacd8b24db89}} 
+\index{example::Sensor@{example::Sensor}!delay@{delay}}
+\index{delay@{delay}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily float example\+::\+Sensor\+::delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tiempo de espera entre la entrada de la colision y el movimiento. 
+
+\mbox{\Hypertarget{classexample_1_1_sensor_aa31ff020f203760129a64b931d844aed}\label{classexample_1_1_sensor_aa31ff020f203760129a64b931d844aed}} 
+\index{example::Sensor@{example::Sensor}!next\_mov@{next\_mov}}
+\index{next\_mov@{next\_mov}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{next\_mov}{next\_mov}}
+{\footnotesize\ttfamily bool example\+::\+Sensor\+::next\+\_\+mov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indica si el siguiente movimiento es hacia el target. 
+
+\mbox{\Hypertarget{classexample_1_1_sensor_a7cabbf4676f11e6cf6059ef84b4dc1e9}\label{classexample_1_1_sensor_a7cabbf4676f11e6cf6059ef84b4dc1e9}} 
+\index{example::Sensor@{example::Sensor}!offset@{offset}}
+\index{offset@{offset}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily b2\+Vec2 example\+::\+Sensor\+::offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Offset de la plataforma. 
+
+\mbox{\Hypertarget{classexample_1_1_sensor_afb349009afdce990f4ce4728634e7b58}\label{classexample_1_1_sensor_afb349009afdce990f4ce4728634e7b58}} 
+\index{example::Sensor@{example::Sensor}!platform@{platform}}
+\index{platform@{platform}!example::Sensor@{example::Sensor}}
+\subsubsection{\texorpdfstring{platform}{platform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_platform}{Platform}}$\ast$ example\+::\+Sensor\+::platform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Puntero a la plataforma. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sensor_8hpp}{Sensor.\+hpp}}\end{DoxyCompactItemize}

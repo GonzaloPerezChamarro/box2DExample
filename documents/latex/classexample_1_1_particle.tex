@@ -1,0 +1,133 @@
+\hypertarget{classexample_1_1_particle}{}\section{example\+::Particle Class Reference}
+\label{classexample_1_1_particle}\index{example::Particle@{example::Particle}}
+Inheritance diagram for example\+::Particle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_particle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexample_1_1_particle_a193ea67e4569b6f3b50ca0dbbede5af7}\label{classexample_1_1_particle_a193ea67e4569b6f3b50ca0dbbede5af7}} 
+virtual bool {\bfseries update} (float delta\+Time)=0
+\item 
+\mbox{\Hypertarget{classexample_1_1_particle_ab48206fec5a65bdd4d8e71a4caf88a1f}\label{classexample_1_1_particle_ab48206fec5a65bdd4d8e71a4caf88a1f}} 
+virtual void {\bfseries render} (sf\+::\+Render\+Window \&renderer)=0
+\item 
+\mbox{\Hypertarget{classexample_1_1_particle_a949a7ef42c6763ec0020279c39fd6a4f}\label{classexample_1_1_particle_a949a7ef42c6763ec0020279c39fd6a4f}} 
+virtual void {\bfseries reset} (sf\+::\+Vector2f pos)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_particle_a8e1787431cc8d15460f63feb3dfbff5a}{Particle}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_particle}{Particle}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classexample_1_1_particle_acacb393e1b308b469d2e5dc9bdc2011f}{current\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Posicion actual de la particula. \end{DoxyCompactList}\item 
+sf\+::\+Color \mbox{\hyperlink{classexample_1_1_particle_a4f6106c9e748261226af7dc27be6fb94}{initial\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Color inicial. \end{DoxyCompactList}\item 
+sf\+::\+Color \mbox{\hyperlink{classexample_1_1_particle_a52dbffe5351cd2217c04b844380c6189}{current\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Color final. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_particle_a24660b8463f8e71a32c8104059e5d030}{life\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Tiempo de vida de la particula. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_particle_acfed6631527b0cc75fc98a10a0fe88fc}{current\+\_\+life\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Tiempo de vida actual. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classexample_1_1_particle_aa6c0d9e3bdeeb79b21d6a7bdadc62a98}{direction}}
+\begin{DoxyCompactList}\small\item\em Vector de direccion de movimiento. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_particle_a736704d02529ef3e2e4dc4f91c928cd4}{speed}}
+\begin{DoxyCompactList}\small\item\em Velocidad de la particula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_particle_a8e1787431cc8d15460f63feb3dfbff5a}\label{classexample_1_1_particle_a8e1787431cc8d15460f63feb3dfbff5a}} 
+\index{example::Particle@{example::Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{Particle()}{Particle()}}
+{\footnotesize\ttfamily example\+::\+Particle\+::\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_particle}{Particle}}. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_particle_a52dbffe5351cd2217c04b844380c6189}\label{classexample_1_1_particle_a52dbffe5351cd2217c04b844380c6189}} 
+\index{example::Particle@{example::Particle}!current\_color@{current\_color}}
+\index{current\_color@{current\_color}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{current\_color}{current\_color}}
+{\footnotesize\ttfamily sf\+::\+Color example\+::\+Particle\+::current\+\_\+color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Color final. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_acfed6631527b0cc75fc98a10a0fe88fc}\label{classexample_1_1_particle_acfed6631527b0cc75fc98a10a0fe88fc}} 
+\index{example::Particle@{example::Particle}!current\_life\_time@{current\_life\_time}}
+\index{current\_life\_time@{current\_life\_time}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{current\_life\_time}{current\_life\_time}}
+{\footnotesize\ttfamily float example\+::\+Particle\+::current\+\_\+life\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tiempo de vida actual. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_acacb393e1b308b469d2e5dc9bdc2011f}\label{classexample_1_1_particle_acacb393e1b308b469d2e5dc9bdc2011f}} 
+\index{example::Particle@{example::Particle}!current\_position@{current\_position}}
+\index{current\_position@{current\_position}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{current\_position}{current\_position}}
+{\footnotesize\ttfamily sf\+::\+Vector2f example\+::\+Particle\+::current\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Posicion actual de la particula. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_aa6c0d9e3bdeeb79b21d6a7bdadc62a98}\label{classexample_1_1_particle_aa6c0d9e3bdeeb79b21d6a7bdadc62a98}} 
+\index{example::Particle@{example::Particle}!direction@{direction}}
+\index{direction@{direction}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily sf\+::\+Vector2f example\+::\+Particle\+::direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector de direccion de movimiento. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_a4f6106c9e748261226af7dc27be6fb94}\label{classexample_1_1_particle_a4f6106c9e748261226af7dc27be6fb94}} 
+\index{example::Particle@{example::Particle}!initial\_color@{initial\_color}}
+\index{initial\_color@{initial\_color}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{initial\_color}{initial\_color}}
+{\footnotesize\ttfamily sf\+::\+Color example\+::\+Particle\+::initial\+\_\+color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Color inicial. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_a24660b8463f8e71a32c8104059e5d030}\label{classexample_1_1_particle_a24660b8463f8e71a32c8104059e5d030}} 
+\index{example::Particle@{example::Particle}!life\_time@{life\_time}}
+\index{life\_time@{life\_time}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{life\_time}{life\_time}}
+{\footnotesize\ttfamily float example\+::\+Particle\+::life\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tiempo de vida de la particula. 
+
+\mbox{\Hypertarget{classexample_1_1_particle_a736704d02529ef3e2e4dc4f91c928cd4}\label{classexample_1_1_particle_a736704d02529ef3e2e4dc4f91c928cd4}} 
+\index{example::Particle@{example::Particle}!speed@{speed}}
+\index{speed@{speed}!example::Particle@{example::Particle}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float example\+::\+Particle\+::speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Velocidad de la particula. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_particle_8hpp}{Particle.\+hpp}}\end{DoxyCompactItemize}

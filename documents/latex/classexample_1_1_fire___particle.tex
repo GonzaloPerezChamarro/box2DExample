@@ -1,0 +1,103 @@
+\hypertarget{classexample_1_1_fire___particle}{}\section{example\+::Fire\+\_\+\+Particle Class Reference}
+\label{classexample_1_1_fire___particle}\index{example::Fire\_Particle@{example::Fire\_Particle}}
+Inheritance diagram for example\+::Fire\+\_\+\+Particle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_fire___particle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_fire___particle_a17b04781f4003239ead55e1999fcbe40}{Fire\+\_\+\+Particle}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_fire___particle}{Fire\+\_\+\+Particle}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_fire___particle_a92201a3db8fe147e61b0255ab2b99097}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Modifica el eestado de la particula cada frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_fire___particle_a75c0920290826c96f3f94c3e5ef3c7c5}{render}} (sf\+::\+Render\+Window \&renderer) override
+\begin{DoxyCompactList}\small\item\em Renderiza la particula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_fire___particle_aa8ac501ef8b43969d47bca8236ab7f73}{reset}} (sf\+::\+Vector2f pos) override
+\begin{DoxyCompactList}\small\item\em Resetea los valores de la particula a los iniciales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_fire___particle_a17b04781f4003239ead55e1999fcbe40}\label{classexample_1_1_fire___particle_a17b04781f4003239ead55e1999fcbe40}} 
+\index{example::Fire\_Particle@{example::Fire\_Particle}!Fire\_Particle@{Fire\_Particle}}
+\index{Fire\_Particle@{Fire\_Particle}!example::Fire\_Particle@{example::Fire\_Particle}}
+\subsubsection{\texorpdfstring{Fire\_Particle()}{Fire\_Particle()}}
+{\footnotesize\ttfamily example\+::\+Fire\+\_\+\+Particle\+::\+Fire\+\_\+\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_fire___particle}{Fire\+\_\+\+Particle}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_fire___particle_a75c0920290826c96f3f94c3e5ef3c7c5}\label{classexample_1_1_fire___particle_a75c0920290826c96f3f94c3e5ef3c7c5}} 
+\index{example::Fire\_Particle@{example::Fire\_Particle}!render@{render}}
+\index{render@{render}!example::Fire\_Particle@{example::Fire\_Particle}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void example\+::\+Fire\+\_\+\+Particle\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{renderer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renderiza la particula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_particle}{example\+::\+Particle}}.
+
+\mbox{\Hypertarget{classexample_1_1_fire___particle_aa8ac501ef8b43969d47bca8236ab7f73}\label{classexample_1_1_fire___particle_aa8ac501ef8b43969d47bca8236ab7f73}} 
+\index{example::Fire\_Particle@{example::Fire\_Particle}!reset@{reset}}
+\index{reset@{reset}!example::Fire\_Particle@{example::Fire\_Particle}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void example\+::\+Fire\+\_\+\+Particle\+::reset (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resetea los valores de la particula a los iniciales. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_particle}{example\+::\+Particle}}.
+
+\mbox{\Hypertarget{classexample_1_1_fire___particle_a92201a3db8fe147e61b0255ab2b99097}\label{classexample_1_1_fire___particle_a92201a3db8fe147e61b0255ab2b99097}} 
+\index{example::Fire\_Particle@{example::Fire\_Particle}!update@{update}}
+\index{update@{update}!example::Fire\_Particle@{example::Fire\_Particle}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool example\+::\+Fire\+\_\+\+Particle\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Modifica el eestado de la particula cada frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true particula viva 
+
+false particula muerta 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classexample_1_1_particle}{example\+::\+Particle}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_fire_particle_8hpp}{Fire\+Particle.\+hpp}}\end{DoxyCompactItemize}
