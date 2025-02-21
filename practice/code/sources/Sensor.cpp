@@ -38,6 +38,5 @@ namespace example
 	{
 		current_time = 0;
 		next_mov = false;
-
 	}
 }

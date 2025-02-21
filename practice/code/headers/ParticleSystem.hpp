@@ -14,53 +14,18 @@
 #include "Entity.hpp"
 #include "Pool.hpp"
 
+#include <iostream>
+
 namespace example
 {
-
 	template <class PARTICLE>
 	class Particle_System :public Entity
 	{
-
-	private:
-
-		typedef PARTICLE Part;
-
-		/**
-		 * @brief Pool de particulas
-		 * 
-		 */
-		Pool<PARTICLE> particles;
-
-		/**
-		 * @brief Numero de particulas iniciales
-		 * 
-		 */
-		size_t initial_particles;
-
-		/**
-		 * @brief Posicion del sistema de particulas
-		 * 
-		 */
-		b2Vec2 position;
-
-		/**
-		 * @brief Tiempo de emision entre particulas
-		 * 
-		 */
-		float emission_rate;
-
-		/**
-		 * @brief Tiempo actual
-		 * 
-		 */
-		float current_time;
-
-
 	public:
 		Particle_System() = delete;
 
 		/**
-		 * @brief Constructor de Particle_System
+		 * @brief Constructor
 		 * 
 		 * @param scene Puntero a la escena
 		 * @param pos Posicion
@@ -71,7 +36,6 @@ namespace example
 			: Entity(scene), particles(particles_count), initial_particles(particles_count), emission_rate(emission_rate), current_time(0.f)
 		{
 			float pixels_scaled = scene->scale_pixels_to_sfml();
-
 
 			b2BodyDef body;
 			body.type = b2_staticBody;
@@ -148,7 +112,6 @@ namespace example
 		}
 
 	private:
-
 		/**
 		 * @brief Emite particulas si es necesario
 		 * 
@@ -167,6 +130,40 @@ namespace example
 				current_time = 0.f;
 			}
 		}
+
+	private:
+
+		typedef PARTICLE Part;
+
+		/**
+			* @brief Pool de particulas
+			*
+			*/
+		Pool<PARTICLE> particles;
+
+		/**
+			* @brief Numero de particulas iniciales
+			*
+			*/
+		size_t initial_particles;
+
+		/**
+			* @brief Posicion del sistema de particulas
+			*
+			*/
+		b2Vec2 position;
+
+		/**
+			* @brief Tiempo de emision entre particulas
+			*
+			*/
+		float emission_rate;
+
+		/**
+			* @brief Tiempo actual
+			*
+			*/
+		float current_time;
 
 	};
 
