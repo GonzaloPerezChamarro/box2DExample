@@ -124,7 +124,7 @@ namespace example
 			bodies["hook_left"] = scene->get_world().CreateBody(&body);
 			bodies["hook_left"]->SetUserData(this);
 
-			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(-2.f, 0.f), 45 * 3.1416 / 180);
+			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(-2.f, 0.f), 45 * 3.1416f / 180);
 			fixture.shape = &shape;
 			fixture.density = 20.f;
 			fixture.friction = 1.f;
@@ -133,7 +133,7 @@ namespace example
 			bodies["hook_left"]->CreateFixture(&fixture);
 
 
-			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(-2.f, -3.f), -45 * 3.1416 / 180);
+			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(-2.f, -3.f), -45 * 3.1416f / 180);
 			fixture.shape = &shape;
 			fixture.density = 3.f;
 			fixture.friction = 1.f;
@@ -151,7 +151,7 @@ namespace example
 			bodies["hook_right"] = scene->get_world().CreateBody(&body);
 			bodies["hook_right"]->SetUserData(this);
 
-			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(2.f, 0.f), -45 * 3.1416 / 180);
+			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(2.f, 0.f), -45 * 3.1416f / 180);
 			fixture.shape = &shape;
 			fixture.density = 20.f;
 			fixture.friction = 1.f;
@@ -160,7 +160,7 @@ namespace example
 			bodies["hook_right"]->CreateFixture(&fixture);
 
 
-			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(2.f, -3.f), 45 * 3.1416 / 180);
+			shape.SetAsBox(14.f *scaled_pixels, 2.f *scaled_pixels, b2Vec2(2.f, -3.f), 45 * 3.1416f / 180);
 			fixture.shape = &shape;
 			fixture.density = 3.f;
 			fixture.friction = 1.f;

@@ -59,13 +59,13 @@ namespace example
 
 	void Scene::generate_world()
 	{
-		add_entity("ball", sh_Entity(new Circle(100.f, 300.f, 17.f, this)));
+		// Ball
+		add_entity("ball", sh_Entity(new Circle(95.f, 300.f, 17.f, this)));
 
 		// Main floor
 		add_entity("floor01", sh_Entity(new Rectangle(this, 55.f, 50.f, 110.f, 100.f)));
 		add_entity("floor02", sh_Entity(new Rectangle(this, 210.f, -7.f, 121.f, 112.f, -30.f)));
 		add_entity("floor03", sh_Entity(new Rectangle(this, 200.f, 20.f, 800.f, 40.f)));
-
 
 		// Second floor
 		add_entity("floor04", sh_Entity(new Rectangle(this, 500.f, 410.f, 100.f, 20.f)));
@@ -99,7 +99,7 @@ namespace example
 		add_entity("hook", sh_Entity(new Hook(this, 600.f, 380.f)));
 
 		// Fire
-		//add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(this, b2Vec2(63.f, 12.f), 15, 0.4f)));
+		add_entity("fire", sh_Entity(new Particle_System<Fire_Particle>(this, b2Vec2(630.f, 120.f), b2Vec2(0.f,0.f), 15, 0.4f)));
 	}
 
 	void Scene::add_entity(const std::string name, const sh_Entity& entity)
@@ -111,10 +111,5 @@ namespace example
 	Entity* Scene::get_entity_by_name(const std::string & name) const
 	{
 		return entities_map.find(name)->second.get();
-	}
-
-	void Scene::set_particle_system(Scene * scene, sf::Vector2i position, sf::Vector2f direction, size_t num_Particles)
-	{
-		// TODO
 	}
 }

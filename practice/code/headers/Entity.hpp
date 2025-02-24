@@ -50,11 +50,11 @@ namespace example
 		Scene* get_scene() const { return scene; }
 
 	protected:
-
 		/* Converts a b2Vec2 position vector to a sfml vector */
-		sf::Vector2f convert_to_sfml_pos(const b2Vec2 & pos, float windows_height) const
+		sf::Vector2f convert_to_sfml_pos(const b2Vec2 & pos) const
 		{
 			float scale = scene->get_scale();
+			const int windows_height = scene->get_height();
 			return sf::Vector2f(pos.x * scale, (windows_height - pos.y) * scale);
 		}
 

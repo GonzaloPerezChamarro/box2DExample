@@ -37,9 +37,6 @@ namespace example
 		/* End color */
 		sf::Color end_color;
 
-		/* Delta color */
-		sf::Color delta_color;
-
 	public:
 		/* Constructor */
 		Fire_Particle();

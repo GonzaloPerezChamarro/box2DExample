@@ -52,5 +52,6 @@ namespace example
 	void Circle::reset()
 	{
 		bodies["circle"]->SetTransform(position, 0.f);
+		bodies["circle"]->SetLinearVelocity(b2Vec2(0.f, 0.f));
 	}
 }

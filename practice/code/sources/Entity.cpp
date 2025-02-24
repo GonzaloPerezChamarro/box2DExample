@@ -44,14 +44,13 @@ namespace example
 					b2Vec2 point_b = b2Mul(transform, edge->m_vertex2);
 
 					sf::Vertex line[] = {
-						sf::Vertex(convert_to_sfml_pos(point_a, (float)scene->get_height()), color),
-						sf::Vertex(convert_to_sfml_pos(point_b, (float)scene->get_height()), color)
+						sf::Vertex(convert_to_sfml_pos(point_a), color),
+						sf::Vertex(convert_to_sfml_pos(point_b), color)
 					};
 					renderer.draw(line, 2, sf::Lines);
 				}
 				else if (type == b2Shape::e_polygon && !fixture->IsSensor())
 				{
-					//&& !fixture->IsSensor()
 					b2PolygonShape * polygon = static_cast<b2PolygonShape *>(fixture->GetShape());
 					sf::ConvexShape shape;
 
@@ -62,7 +61,7 @@ namespace example
 					for (int i = 0; i < vertex_count; ++i)
 					{
 						b2Vec2 mul = b2Mul(transform, polygon->GetVertex(i));
-						shape.setPoint(i, convert_to_sfml_pos(mul, (float)scene->get_height()));
+						shape.setPoint(i, convert_to_sfml_pos(mul));
 					}
 					renderer.draw(shape);
 				}
@@ -73,7 +72,7 @@ namespace example
 					float radius = circle->m_radius * scale;
 					sf::CircleShape circle_Shape;
 					b2Vec2 mul = b2Mul(transform, center);
-					circle_Shape.setPosition(convert_to_sfml_pos(mul, (float)scene->get_height()) - sf::Vector2f(radius, radius));
+					circle_Shape.setPosition(convert_to_sfml_pos(mul) - sf::Vector2f(radius, radius));
 					circle_Shape.setFillColor(color);
 					circle_Shape.setRadius(radius);
 					renderer.draw(circle_Shape);
@@ -87,8 +86,8 @@ namespace example
 			b2Vec2 anchor_B = joint_begin->second->GetBodyB()->GetPosition();
 
 			sf::Vertex line[] = {
-				sf::Vertex(convert_to_sfml_pos(anchor_A, (float)scene->get_height()), sf::Color::Blue),
-				sf::Vertex(convert_to_sfml_pos(anchor_B, (float)scene->get_height()), sf::Color::Blue)
+				sf::Vertex(convert_to_sfml_pos(anchor_A), sf::Color::Blue),
+				sf::Vertex(convert_to_sfml_pos(anchor_B), sf::Color::Blue)
 			};
 			renderer.draw(line, 2, sf::Lines);
 		}

@@ -63,8 +63,6 @@ namespace example
 
 		Entity * get_entity_by_name(const std::string & name) const;
 
-		void set_particle_system(Scene * scene, sf::Vector2i position, sf::Vector2f direction, size_t num_Particles);
-
 	private:
 		void reset();
 

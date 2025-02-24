@@ -10,170 +10,56 @@
  *
  */
 
+#include <list>
+
 namespace example
 {
 	template< typename OBJECT >
 	class Pool
 	{
 		typedef OBJECT Object;
-		
-		class Node
-		{
-		public:
-			
-			Object object;
-			Node * prev;
-			Node * next;
-		};
-
-		/* Array of nodes*/
-		std::vector<Node> nodes;
-
-		/* Points to the first free node */
-		Node* first_free;
-
-		/* Points to the first node in use*/
-		Node* first_used;
-
-	public:
-		/* Class iterator, for iterate between nodes */
-		class Iterator
-		{
-			Node * current;
-
-		public:
-
-			Iterator(Node * start)
-			{
-				current = start;
-			}
-
-			Iterator(const Iterator &) = default;
-
-			Iterator & operator ++ ()
-			{
-				current = current->next;
-				return *this;
-			}
-
-			Iterator operator ++ (int)
-			{
-				Iterator copy(*this);
-				current = current->next;
-				return copy;
-			}
-
-			Object & operator * ()
-			{
-				return current->object;
-			}
-
-			bool operator == (const Iterator & other) const
-			{
-				return this->current == other.current;
-			}
-
-			bool operator != (const Iterator & other) const
-			{
-				return this->current != other.current;
-			}
-		};
 
 	public:
 		/* Constructor */
-		Pool(size_t size) : nodes(size)
+		Pool(size_t size = 0)
 		{
-			if (size > 0)
-				this->first_free = &nodes[0];
-			else
-				first_free = nullptr;
-
-			if (size > 1)
+			for (size_t i = 0; i < size; ++i)
 			{
-				first_free->next = &nodes[1];
+				objects.emplace_back(Object());
+				free_objs.push_back(&objects.back());
 			}
-			first_free->prev = nullptr;
-
-			this->first_used = nullptr;
-
-
-			Node * current = first_free->next;
-
-			for (int i = 1; i < nodes.size() -1; ++i)
-			{
-				current = &nodes[i];
-				current->prev = &nodes[i - 1];
-				current->next = &nodes[i + 1];
-				current = current->next;
-			}
-
-			current = &nodes[nodes.size() - 1];
-			current->prev = &nodes[nodes.size() - 2];
-			current->next = nullptr;
 		}
 
-		Object * get_free_object()
+		Object* get_free_object()
 		{
-			Node * free = first_free;
-
-			if (free)
+			if (!free_objs.empty())
 			{
-				first_free = free->next;
-
-				if (free->next)
-				{
-					free->next->prev = nullptr;
-				}
-
-				free->next = first_used;
-				
-				if (first_used)
-				{
-					first_used->prev = free;
-				}
-				
-				first_used = free;
+				used_objs.push_back(free_objs.back());
+				free_objs.pop_back();
 			}
-			
-			return reinterpret_cast<Object *>(free);
+			else
+			{
+				objects.emplace_back(Object());
+				used_objs.push_back(&objects.back());
+			}
 
+			return used_objs.back();
 		}
 
 		void free_object(Object * object)
 		{
-			Node * node = reinterpret_cast<Node *>(object);
-
-			if (node->prev)
-			{
-				node->prev->next = node->next;
-			}
-			else
-			{
-				first_used = node->next;
-			}
-
-			if (node->next)
-			{
-				node->next->prev = node->prev;
-			}
-
-			node->prev = nullptr;
-			node->next = first_free;
-
-			if(first_free)
-				first_free->prev = node;
-
-			first_free = node;
+			used_objs.remove(object);
+			free_objs.push_back(object);
 		}
 
-		Iterator begin()
-		{
-			return Iterator(first_used);
-		}
+	private:
+		/* Pool of objects */
+		std::list<Object> objects;
 
-		Iterator end()
-		{
-			return Iterator(nullptr);
-		}
+		/* List of pointers to the free objects */
+		std::list<Object*> free_objs;
+
+		/* List of pointers to the used objects */
+		std::list<Object*> used_objs;
 	};
 }
