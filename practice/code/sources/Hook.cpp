@@ -7,11 +7,11 @@ namespace example
 	Hook::Hook(Scene * scene, float x, float y)
 		:Entity(scene)
 	{
-
 		float scaled_pixels = scene->scale_pixels_to_sfml();
 		b2BodyDef body;
 		b2PolygonShape shape;
 		b2FixtureDef fixture;
+
 		//BODY
 		{
 			body.type = b2_dynamicBody;
@@ -100,12 +100,13 @@ namespace example
 
 			bodies["hook"]->CreateFixture(&fixture);
 		}
+
 		// PRISM JOINT
 		{
 			b2PrismaticJointDef joint;
 			joint.Initialize(bodies["base"], bodies["hook"], position, b2Vec2(0, -1));
 			joint.lowerTranslation = -5.f;
-			joint.upperTranslation = 10.f;
+			joint.upperTranslation = 8.5f;
 			joint.enableLimit = true;
 			joint.maxMotorForce = 20000;
 			joint.enableMotor = true;
@@ -174,7 +175,7 @@ namespace example
 			joint.Initialize(bodies["hook"], bodies["hook_left"],b2Vec2(bodies["hook"]->GetPosition().x, bodies["hook"]->GetPosition().y));
 			joint.collideConnected = false;
 			joint.referenceAngle = 0.f;
-			joint.lowerAngle = -40.f * 3.1416 / 180;
+			joint.lowerAngle = -40.f * 3.1416f / 180;
 			joint.upperAngle = 0.f;
 			joint.enableMotor = true;
 			joint.enableLimit = true;
@@ -186,7 +187,7 @@ namespace example
 			joint.Initialize(bodies["hook"], bodies["hook_right"], b2Vec2(bodies["hook"]->GetPosition().x, bodies["hook"]->GetPosition().y));
 			joint.collideConnected = false;
 			joint.referenceAngle = 0.f;
-			joint.upperAngle = 40.f * 3.1416 / 180;
+			joint.upperAngle = 40.f * 3.1416f / 180;
 			joint.lowerAngle = 0.f;
 			joint.enableMotor = true;
 			joint.maxMotorTorque = 10000.f;
@@ -198,29 +199,32 @@ namespace example
 		up = true;
 		set_color(sf::Color(210, 88, 10));
 	}
+
 	void Hook::update(float deltaTime)
 	{
-		//Elevacion
+		// Vertical movement 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
 		{
 			prim_joint->SetMotorSpeed(-300);
 		}
+
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
 		{
 			prim_joint->SetMotorSpeed(50);
 		}
 
-		//Movimiento
+		// Horizontal movement
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
 		{
 			main_body->ApplyLinearImpulse(b2Vec2(-400, 0), b2Vec2(0, position.y), true);
 		}
+		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
 		{
 			main_body->ApplyLinearImpulse(b2Vec2(400, 0), b2Vec2(0, position.y), true);
 		}
 
-		//Garras
+		// Hook
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
 		{
 			joint_left->SetMotorSpeed(10000);
@@ -231,6 +235,5 @@ namespace example
 			joint_left->SetMotorSpeed(-7000);
 			joint_right->SetMotorSpeed(7000);
 		}
-
 	}
 }

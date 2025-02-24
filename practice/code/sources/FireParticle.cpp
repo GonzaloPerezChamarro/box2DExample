@@ -30,13 +30,12 @@ namespace example
 		current_radius = current_radius - 2.5f *deltaTime;
 		shape.setRadius(current_radius);
 
-		//Modifica el color, pero produce errores en ejecucion
+		// TODO: fix it
 		/*
 		current_color = color + (sf::Color(delta_color.r * (current_life_time) ,
 											delta_color.g * (current_life_time),
 											delta_color.b * (current_life_time)));*/
 		
-
 
 		shape.setFillColor(current_color);
 		return current_life_time > 0.f;
@@ -45,7 +44,6 @@ namespace example
 	void Fire_Particle::render(sf::RenderWindow & renderer)
 	{
 		renderer.draw(shape);
-
 	}
 
 	void Fire_Particle::reset(sf::Vector2f pos)

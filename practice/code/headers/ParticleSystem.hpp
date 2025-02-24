@@ -1,11 +1,11 @@
 /**
  * @file ParticleSystem.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Sistema de particulas sencillo
- * @version 0.1
+ * @brief Class that represents a simple particle system (templated)
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -19,19 +19,13 @@
 namespace example
 {
 	template <class PARTICLE>
-	class Particle_System :public Entity
+	class Particle_System : public Entity
 	{
 	public:
+		/* Removed constructor by default */
 		Particle_System() = delete;
 
-		/**
-		 * @brief Constructor
-		 * 
-		 * @param scene Puntero a la escena
-		 * @param pos Posicion
-		 * @param particles_count Numero de particulas
-		 * @param emission_rate Tiempo de emision
-		 */
+		/* Constructor */
 		Particle_System(Scene * scene, b2Vec2 pos, size_t particles_count, float emission_rate)
 			: Entity(scene), particles(particles_count), initial_particles(particles_count), emission_rate(emission_rate), current_time(0.f)
 		{
@@ -58,28 +52,25 @@ namespace example
 			set_color(sf::Color::Black);
 		}
 
-		/**
-		 * @brief Destructor de Particle_System
-		 * 
-		 */
+		/* Destructor*/
 		~Particle_System()
 		{}
 
-
-		void collision_enter(Entity* e)override 
+		/* Called when an entity collides with the particle system */
+		void collision_enter(Entity* e) override 
 		{
-			std::cout << e->get_tag() << std::endl;
 			if (e->get_tag() == "ball")
 			{
 				scene->set_have_to_reset(true);
 			}
 		}
-		void collision_exit(Entity* e) override{}
+
+		/* Called when the collision with an entity ends */
+		void collision_exit(Entity* e) override {}
 
 		/**
-		 * @brief Actualizado de las particulas y su emision
-		 * 
-		 * @param deltaTime 
+		 * @brief Updates the state and emission
+		 * @param deltaTime Delta time
 		 */
 		void update(float deltaTime) override
 		{
@@ -96,13 +87,12 @@ namespace example
 		}
 
 		/**
-		 * @brief Renderizado de las particulas
-		 * 
+		 * @brief Render the particle system
 		 * @param renderer 
 		 */
 		void render(sf::RenderWindow & renderer) override
 		{
-			__super::render(renderer);
+			Entity::render(renderer);
 			
 			for (auto & particle : particles)
 			{
@@ -113,9 +103,8 @@ namespace example
 
 	private:
 		/**
-		 * @brief Emite particulas si es necesario
-		 * 
-		 * @param deltaTime 
+		 * @brief Manages the particles emission
+		 * @param deltaTime Delta time
 		 */
 		void emission(float deltaTime)
 		{
@@ -132,39 +121,21 @@ namespace example
 		}
 
 	private:
-
 		typedef PARTICLE Part;
 
-		/**
-			* @brief Pool de particulas
-			*
-			*/
+		/* Pool of particles */
 		Pool<PARTICLE> particles;
 
-		/**
-			* @brief Numero de particulas iniciales
-			*
-			*/
+		/* Number of initial particles */
 		size_t initial_particles;
 
-		/**
-			* @brief Posicion del sistema de particulas
-			*
-			*/
+		/* Position of particle system*/
 		b2Vec2 position;
 
-		/**
-			* @brief Tiempo de emision entre particulas
-			*
-			*/
+		/* Emission time rate */
 		float emission_rate;
 
-		/**
-			* @brief Tiempo actual
-			*
-			*/
+		/* Emission elapsed time */
 		float current_time;
-
 	};
-
 }

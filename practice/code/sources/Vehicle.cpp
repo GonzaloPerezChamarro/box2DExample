@@ -8,7 +8,7 @@ namespace example
 	{
 		right = left = false;
 
-		float scaled_pixels = scene->scale_pixels_to_sfml();
+		const float scaled_pixels = scene->scale_pixels_to_sfml();
 
 		//Body
 		{
@@ -66,7 +66,7 @@ namespace example
 			wheel1_joint.bodyB = bodies["wheel1"];
 			wheel1_joint.collideConnected = false;
 			wheel1_joint.referenceAngle = 0;
-			wheel1_joint.localAnchorA.Set(-3.7, -3.5);
+			wheel1_joint.localAnchorA.Set(-3.7f, -3.5f);
 			wheel1_joint.localAnchorB.Set(0, 0);
 			wheel1_joint.enableMotor = true;
 			wheel1_joint.maxMotorTorque = 3000;
@@ -102,7 +102,7 @@ namespace example
 			wheel2_joint.bodyB = bodies["wheel2"];
 			wheel2_joint.collideConnected = false;
 			wheel2_joint.referenceAngle = 0;
-			wheel2_joint.localAnchorA.Set(3.7, -3.5);
+			wheel2_joint.localAnchorA.Set(3.7f, -3.5f);
 			wheel2_joint.localAnchorB.Set(0, 0);
 			wheel2_joint.enableMotor = true;
 			wheel2_joint.maxMotorTorque = 3000;
@@ -112,8 +112,8 @@ namespace example
 		}
 
 		set_color(sf::Color::Blue);
-		
 	}
+
 	void Vehicle::update(float deltaTime)
 	{
 		input();
@@ -134,6 +134,7 @@ namespace example
 			wheel2->SetMotorSpeed(0);
 		}
 	}
+
 	void Vehicle::reset()
 	{
 		float scaled_pixels = scene->scale_pixels_to_sfml();
@@ -145,16 +146,18 @@ namespace example
 		bodies["wheel2"]->SetTransform(b2Vec2(100.f * scaled_pixels, 300.f * scaled_pixels), 0.f);
 		wheel1->SetMotorSpeed(0);
 		wheel2->SetMotorSpeed(0);
+	}
 
-	}
-	void Vehicle::collision_enter(Entity*e)
+	void Vehicle::collision_enter(Entity* e)
 	{
 		//nothing
 	}
-	void Vehicle::collision_exit(Entity*e)
+
+	void Vehicle::collision_exit(Entity* e)
 	{
 		//nothing
 	}
+
 	void Vehicle::input()
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) )

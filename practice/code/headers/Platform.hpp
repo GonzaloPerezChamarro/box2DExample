@@ -1,11 +1,11 @@
 /**
  * @file Platform.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Plataforma que se mueve entre dos posiciones
- * @version 0.1
+ * @brief Plataform that moves between two positions
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -17,110 +17,62 @@ namespace example
 {
 	class Platform : public Rectangle
 	{
-	private:
-		/**
-		 * @brief Posicion target
-		 * 
-		 */
-		b2Vec2 target;
-
-		/**
-		 * @brief Vector de movimiento
-		 * 
-		 */
-		b2Vec2 mov_vec;
-
-		/**
-		 * @brief Indica si se tiene que mover al objetivo
-		 * 
-		 */
-		bool have_to_move;
-
-		/**
-		 * @brief Indica si la plataforma esta parada
-		 * 
-		 */
-		bool stopped;
-
-		/**
-		 * @brief Angulo en radianes
-		 * 
-		 */
-		float angle_in_rad;
-
-		/**
-		 * @brief Velocidad de movimieto
-		 * 
-		 */
-		float speed;
-
 	public:
-	/**
-	 * @brief Constructor de Platform
-	 * 
-	 * @param scene 
-	 * @param x posicion x
-	 * @param y posicion y
-	 * @param hx ancho
-	 * @param hy largo
-	 * @param offset target
-	 * @param speed velocidad
-	 * @param angle angulo
-	 */
+		/**
+		 * @brief Constructor
+		 * @param scene Pointer to game scene
+		 * @param x position x
+		 * @param y position y
+		 * @param hx Width
+		 * @param hy height
+		 * @param offset to target position
+		 * @param speed Movement speed
+		 * @param angle Angle
+		 */
 		Platform(Scene * scene, float x, float y, float hx, float hy, b2Vec2 offset, float speed, float angle = 0.f);
 
 	public:
 		void update(float deltaTime) override;
 
-	public:
+		/* Modifies if the platform has to move */
+		void set_move_to_target(bool b);
 
-		/**
-		 * @brief Modifica el valor de have to move 
-		 * 
-		 * @param b 
-		 */
-		void set_have_to_move(bool b);
+		/* Returns if the platform is moving to target (or has arrived) */
+		bool get_move_to_target() const { return moving_to_target; }
 
-		/**
-		 * @brief Devuelve si la plataforma esta parada
-		 * 
-		 * @return true 
-		 * @return false 
-		 */
+		/* Returns if the platform is stopped */
 		bool is_stopped() const { return stopped; }
 
 	private:
-		/**
-		 * @brief Mueve la plataforma al objetivo
-		 * 
-		 * @param deltaTime 
-		 */
+		/* Moves the platform to the target */
 		void move_to_target(float deltaTime);
 
-		/**
-		 * @brief Mueve la plataforma a su posicion inicial
-		 * 
-		 * @param deltaTime 
-		 */
+		/* Moves the platform to the initial position */
 		void move_to_init(float deltaTime);
 
-		/**
-		 * @brief Metodo que comprueba si dos vectores son iguales con cierta tolerancia
-		 * 
-		 * @param vec1 
-		 * @param vec2 
-		 * @param tolerance 
-		 * @return true 
-		 * @return false 
-		 */
-		bool near_equals(b2Vec2 vec1, b2Vec2 vec2, float tolerance);
+		/* Checks if two vectors are equals with a tolerance */
+		bool near_equals(b2Vec2 vec1, b2Vec2 vec2, float tolerance) const;
 
-		/**
-		 * @brief Normalizacion de un vector
-		 * 
-		 * @param v 
-		 * @return b2Vec2 
-		 */
-		b2Vec2 normalize(b2Vec2 v);
+		/* Normalize a vector */
+		b2Vec2 normalize(b2Vec2 v) const;
+
+	private:
+		/* Target position */
+		b2Vec2 target_position;
+
+		/* Movement vector */
+		b2Vec2 mov_vec;
+
+		/* Flag that indicates if the platform has to move */
+		bool moving_to_target;
+
+		/* Flag that indicates if the platform is stopped */
+		bool stopped;
+
+		/* Angle in radians */
+		float angle_in_rad;
+
+		/* Movement speed */
+		float mov_speed;
 	};
 }

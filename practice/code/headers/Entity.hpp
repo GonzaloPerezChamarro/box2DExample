@@ -1,11 +1,11 @@
 /**
  * @file Entity.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase base de una entidad o gameobject
- * @version 0.1
+ * @brief Base class of an entity or gameobject
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -25,142 +25,59 @@ namespace example
 
 	class Entity
 	{
-	protected:
-		
-		/**
-		 * @brief Mapa de b2Body de la entidad
-		 * 
-		 */
-		map<string, b2Body*> bodies;
-
-		/**
-		 * @brief Mapa de joints de la entidad
-		 * 
-		 */
-		map<string, b2Joint *> joints;
-
-		/**
-		 * @brief Puntero a la escena principal
-		 * 
-		 */
-		Scene * scene;
-
-		/**
-		 * @brief Vector de posicion inicial
-		 * 
-		 */
-		b2Vec2 position;
-
-		/**
-		 * @brief Color de los bodies de la entidad
-		 * 
-		 */
-		sf::Color color;
-
-		/**
-		 * @brief Indica el estado de actividad de la entidad
-		 * 
-		 */
-		bool enabled;
-		std::string tag = "none";
-
 	public:
-		/**
-		 * @brief Constructor de Entity
-		 * 
-		 * @param scene 
-		 */
+		/* Constructor */
 		Entity(Scene* scene);
 
-		/**
-		 * @brief Destructor de Entity
-		 * 
-		 */
+		/* Destructor */
 		virtual ~Entity();
 
-
-
-	public:
-		/**
-		 * @brief Metodo virtual puro llamado cada frame
-		 * 
-		 * @param deltaTime 
-		 */
 		virtual void update(float deltaTime) = 0;
 
-		/**
-		 * @brief Metodo de renderizado
-		 * 
-		 * @param renderer 
-		 */
 		virtual void render(sf::RenderWindow & renderer);
 
-	public:
-
-		/**
-		 * @brief Devuelve puntero a la escena 
-		 * 
-		 * @return Scene* 
-		 */
-		Scene * get_scene() const
-		{
-			return scene;
-		}
+		virtual void reset() {}
 		
-		/**
-		 * @brief Metodo virtual puro llamado al entrar en colision
-		 * 
-		 */
 		virtual void collision_enter(Entity*) = 0;
-		/**
-		 * @brief Metodo virtual puro llamado al salir de una colision
-		 * 
-		 */
 		virtual void collision_exit(Entity*) = 0;
 
-		virtual void reset() {}
-
-		/**
-		 * @brief Modifica el valor de color 
-		 * 
-		 * @param c 
-		 */
+		/* Returns the entity position */
+		const b2Vec2& get_position() const { return bodies.at("rectangle")->GetPosition(); }
 		void set_color(const sf::Color c) { color = c; }
-
-		/**
-		 * @brief Devuelve position 
-		 * 
-		 * @return const b2Vec2& 
-		 */
-		const b2Vec2 & get_position() const
-		{
-			return bodies.at("rectangle")->GetPosition();
-		}
-
-		/**
-		 * @brief Modifica el valor de enabled 
-		 * 
-		 * @param b 
-		 */
 		void set_enabled(bool b) { enabled = b; }
 		void set_tag(std::string t) { tag = t; }
 		std::string get_tag() const { return tag; }
+		Scene* get_scene() const { return scene; }
 
 	protected:
 
-		/**
-		 * @brief Convierte la posicion recibida a posicion de sfml
-		 * 
-		 * @param pos Vector de posicion
-		 * @param windows_height altura de la ventana
-		 * @return sf::Vector2f 
-		 */
-		sf::Vector2f convert_to_sfml_pos(const b2Vec2 & pos, float windows_height)
+		/* Converts a b2Vec2 position vector to a sfml vector */
+		sf::Vector2f convert_to_sfml_pos(const b2Vec2 & pos, float windows_height) const
 		{
 			float scale = scene->get_scale();
 			return sf::Vector2f(pos.x * scale, (windows_height - pos.y) * scale);
 		}
 
+	protected:
+		/* Map of bodies */
+		map<string, b2Body*> bodies;
 
+		/* Map of joints */
+		map<string, b2Joint*> joints;
+
+		/* Pointer to game scene */
+		Scene* scene;
+
+		/* Position of the entity */
+		b2Vec2 position;
+
+		/* Bodies' color */
+		sf::Color color;
+
+		/* Flag that indicates if the flag is active */
+		bool enabled = true;
+
+		/* Entity tag */
+		std::string tag = "none";
 	};
 }

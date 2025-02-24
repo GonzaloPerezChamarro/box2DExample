@@ -1,11 +1,11 @@
 /**
  * @file Scene.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa una escena
- * @version 0.1
+ * @brief Class of a game scene
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -27,98 +27,70 @@ namespace example
 	class Scene
 	{
 	private:
-
 		typedef std::shared_ptr<Entity> sh_Entity;
 
-	private:
-
-		/**
-		 * @brief Mapa de entidades
-		 * 
-		 */
-		map<string, sh_Entity> entities_map;
-
-		/**
-		 * @brief Ancho de la ventana
-		 * 
-		 */
-		int width;
-
-		/**
-		 * @brief Alto de la ventana
-		 * 
-		 */
-		int height;
-
-		/**
-		 * @brief Factor de escala
-		 * 
-		 */
-		float scale;
-
-		/**
-		 * @brief Gravedad
-		 * 
-		 */
-		float gravity;
-
-		/**
-		 * @brief Mundo fisico
-		 * 
-		 */
-		b2World world;
-		Game * game;
-
-		bool have_to_reset;
-
 	public:
-	/**
-	 * @brief Constructor de Scene
-	 * 
-	 * @param width 
-	 * @param height 
-	 * @param scale 
-	 * @param gravity 
-	 */
+		/* Constructor */
 		Scene(int width, int height, float scale, float gravity);
+
+		/* Destructor */
 		virtual ~Scene();
 
 	public:
 		void update(float deltaTime);
-
 		void render(sf::RenderWindow & renderer);
 
-	public:
+		void generate_world();
 
-	//Metodos con nombres auto explicativos
+		b2World & get_world() { return world; }
 
-		b2World & get_world() {return world;}
+		int get_width() const { return width; }
 
-		int get_width() {return width;}
+		int get_height() const { return height; }
 
-		int get_height() {return height;}
+		float get_scale() const { return scale; }
 
-		float get_scale() const {return scale;}
+		float get_gravity() const { return gravity; }
 
-		float get_gravity() const {return gravity;}
-
-		float scale_pixels_to_sfml(){return 1.f / scale;}
+		float scale_pixels_to_sfml() const { return 1.f / scale; }
 
 		void set_game(Game * g) { game = g; }
 		Game * get_game() const { return game; }
 
 		void set_have_to_reset(bool b) { have_to_reset = b; }
 
-
 		void add_entity(const std::string name, const sh_Entity & entity);
 
-		Entity * get_entity_by_name(const std::string & name);
+		Entity * get_entity_by_name(const std::string & name) const;
 
 		void set_particle_system(Scene * scene, sf::Vector2i position, sf::Vector2f direction, size_t num_Particles);
 
 	private:
 		void reset();
 
+	private:
+		/* Entity map */
+		map<string, sh_Entity> entities_map;
 
+		/* Window's width */
+		int width;
+
+		/* Window's height */
+		int height;
+
+		/* Scale factor */
+		float scale;
+
+		/* Gravity */
+		float gravity;
+
+		/* Physical world */
+		b2World world;
+
+		/* Pointer to the game */
+		Game* game;
+
+		/* Flag indicates if the scene has to reset */
+		bool have_to_reset;
 	};
 }

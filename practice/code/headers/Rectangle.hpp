@@ -1,11 +1,11 @@
 /**
  * @file Rectangle.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase base de un rectangulo con fisicas Box2D
- * @version 0.1
+ * @brief Class that represents a rectangle with Box2D physics
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -21,15 +21,14 @@ namespace example
 		float angle_in_rad;
 	public:
 		/**
-		 * @brief Constructor de Rectangle
-		 * 
-		 * @param scene 
-		 * @param x Posicion x
-		 * @param y Posicion y
-		 * @param hx ancho
-		 * @param hy alto
-		 * @param angle angulo de rotacion
-		 * @param type tipo
+		 * @brief Constructor
+		 * @param scene Pointer to game scene
+		 * @param x Position x
+		 * @param y Position y
+		 * @param hx Width
+		 * @param hy Height
+		 * @param angle Rotation angle
+		 * @param type Body type
 		 */
 		Rectangle(Scene * scene, float x, float y, float hx, float hy,  float angle = 0.f, b2BodyType type = b2_staticBody);
 

@@ -1,11 +1,11 @@
 /**
  * @file Hook.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa a un gancho
- * @version 0.1
+ * @brief Class that represents a hook
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -18,58 +18,40 @@ namespace example
 {
 	class Hook :public Entity
 	{
-	private:
-
-		/**
-		 * @brief Prismatic joint que permite subir y bajar el gancho
-		 * 
-		 */
-		b2PrismaticJoint * prim_joint;
-
-		/**
-		 * @brief Puntero al cuerpo principal 
-		 * 
-		 */
-		b2Body * main_body;
-
-		/**
-		 * @brief Joint izquierdo de la garra
-		 * 
-		 */
-		b2RevoluteJoint * joint_left;
-
-		/**
-		 * @brief Joint derecho de la garra
-		 * 
-		 */
-		b2RevoluteJoint * joint_right;
-
-		/**
-		 * @brief Indica el estado del gancho
-		 * 
-		 */
-		bool up;
-
 	public:
 		/**
-		 * @brief Constructor de Hook
-		 * 
-		 * @param scene 
-		 * @param x Posicion X
-		 * @param y Posicion Y
+		 * @brief Constructor
+		 * @param scene Pointer to game scene
+		 * @param x Position X
+		 * @param y Position Y
 		 */
 		Hook(Scene * scene, float x, float y);
 
 	public:
 		/**
-		 * @brief Actualiza el estado y gestiona el movimiento
-		 * 
-		 * @param deltaTime 
+		 * @brief Updates the state and manages the movement
+		 * @param deltaTime Delta time
 		 */
 		void update(float deltaTime) override;
 
-	public:
 		void collision_enter(Entity*) override {};
 		void collision_exit(Entity*) override {};
+
+	private:
+		/* Prismatic joint that allows to move up and down the hook */
+		b2PrismaticJoint* prim_joint;
+
+		/* Pointer to main body */
+		b2Body* main_body;
+
+		/* Pointer to the left side of the hook */
+		b2RevoluteJoint* joint_left;
+
+		/* Pointer to the right side of the hook */
+
+		b2RevoluteJoint* joint_right;
+
+		/* Flag that indicates if the hook is up */
+		bool up;
 	};
 }

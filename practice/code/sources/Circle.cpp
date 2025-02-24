@@ -38,14 +38,17 @@ namespace example
 	{
 		//nothing
 	}
+
 	void Circle::collision_enter(Entity* e)
 	{
 		//nothing
 	}
+
 	void Circle::collision_exit(Entity* e)
 	{
 		//nothing
 	}
+
 	void Circle::reset()
 	{
 		bodies["circle"]->SetTransform(position, 0.f);

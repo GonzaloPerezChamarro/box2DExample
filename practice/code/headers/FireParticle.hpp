@@ -1,11 +1,11 @@
 /**
  * @file FireParticle.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa una particula de fuego
- * @version 0.1
+ * @brief Class that represents a fire particle
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -15,82 +15,43 @@
 
 namespace example
 {
-	class Fire_Particle :public Particle
+	class Fire_Particle : public Particle
 	{
 
 	private:
-		/**
-		 * @brief circulo de la particula
-		 * 
-		 */
+		/* Circle shape */
 		sf::CircleShape shape;
 
-		/**
-		 * @brief Radio inicial
-		 * 
-		 */
+		/* Initial radius */
 		float init_radius;
 
-		/**
-		 * @brief Radio actual de la particula
-		 * 
-		 */
+		/* Current radius */
 		float current_radius;
 
-		/**
-		 * @brief Color de la particula inicial
-		 * 
-		 */
+		/* Initial color */
 		sf::Color color;
 
-		/**
-		 * @brief Color actual
-		 * 
-		 */
+		/* Current color */
 		sf::Color current_color;
 
-		/**
-		 * @brief Color final
-		 * 
-		 */
+		/* End color */
 		sf::Color end_color;
 
-		/**
-		 * @brief Color delta
-		 * 
-		 */
+		/* Delta color */
 		sf::Color delta_color;
 
 	public:
-		/**
-		 * @brief Constructor de Fire_Particle
-		 * 
-		 */
+		/* Constructor */
 		Fire_Particle();
 
 		/**
-		 * @brief Modifica el eestado de la particula cada frame
-		 * 
-		 * @param deltaTime 
-		 * @return true particula viva
-		 * @return false particula muerta
+		 * @brief Modifies the particle's state every tick
+		 * @param deltaTime Delta time 
+		 * @return true if the particle is alive
 		 */
 		bool update(float deltaTime) override;
 
-		/**
-		 * @brief Renderiza la particula
-		 * 
-		 * @param renderer 
-		 */
 		void render(sf::RenderWindow & renderer) override;
-
-		/**
-		 * @brief Resetea los valores de la particula a los iniciales
-		 * 
-		 * @param pos 
-		 */
 		void reset(sf::Vector2f pos) override;
-
-
 	};
 }

@@ -1,11 +1,11 @@
 /**
  * @file Circle.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase correspondiente a un circulo con fisicas Box2D
- * @version 0.1
+ * @brief Class that represents a circle with Box2D physics
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -17,19 +17,14 @@ namespace example
 {
 	class Circle : public Entity
 	{
-	private:
-
-
-
 	public:
-	/**
-	 * @brief Constructor de Circle
-	 * 
-	 * @param x Posicion X
-	 * @param y Posicion Y
-	 * @param radius Radio
-	 * @param scene Puntero a escena
-	 */
+		/**
+		 * @brief Constructor de Circle
+		 * @param x Position X
+		 * @param y Position Y
+		 * @param radius of the circle
+		 * @param scene Pointer to game scene
+		 */
 		Circle(float x, float y, float radius, Scene * scene);
 
 	public:
@@ -40,6 +35,5 @@ namespace example
 		void collision_exit(Entity*) override;
 
 		void reset() override;
-
 	};
 }

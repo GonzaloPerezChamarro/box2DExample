@@ -1,11 +1,11 @@
 /**
  * @file Listener.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Listener de eventos de colision
- * @version 0.1
+ * @brief Listener of collision events
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -20,27 +20,16 @@ namespace example
 	class Listener : public b2ContactListener
 	{
 	public:
-		/**
-		 * @brief Constructor de Listener
-		 * 
-		 */
+		/* Constructor */
 		Listener()
 		{}
 
 	private:
 
-		/**
-		 * @brief Entrada en contacto de dos fixtures
-		 * 
-		 * @param contact 
-		 */
+		/* Called when entered on contact with other collision */
 		void BeginContact(b2Contact* contact) override;
 
-		/**
-		 * @brief Perdida de contacto entre dos fixtures
-		 * 
-		 * @param contact 
-		 */
+		/* Called when the contact with other collision ended */
 		void EndContact(b2Contact* contact) override;
 	};
 }

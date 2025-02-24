@@ -1,11 +1,11 @@
 /**
  * @file Game.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase de juego principal
- * @version 0.1
+ * @brief Class of a game
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -16,73 +16,41 @@
 
 namespace example
 {
-
 	class Game
 	{
 	private:
 		typedef std::shared_ptr<Entity> sh_Entity;
 
-	private:
-		/**
-		 * @brief Ventana de juego
-		 * 
-		 */
-		sf::RenderWindow window;
-
-		/**
-		 * @brief Puntero a la escena principal
-		 * 
-		 */
-		Scene * scene;
-
 	public:
-
 		/**
-		 * @brief Constructor de Game
-		 * 
-		 * @param window_name Nombre de la ventana
-		 * @param width Ancho de la ventana
-		 * @param height Alto de la ventana
+		 * @brief Constructor
+		 * @param window_name Name of the window
+		 * @param width Width of the window
+		 * @param height Height of the window
 		 */
 		Game(const char * window_name, int width, int height);
 
 	public:
-		/**
-		 * @brief Metodo llamado al comienzo del juego
-		 * 
-		 */
+		/* Called at the begining of the game */
 		void start();
 
-		/**
-		 * @brief Metodo llamado cada frame que actualiza la escena
-		 * 
-		 */
+		/* Called every tick */
 		void update();
 
-		/**
-		 * @brief Renderiza la escena
-		 * 
-		 */
+		/* Renders the scene */
 		void render();
 
-		/**
-		 * @brief Resetea la escena
-		 * 
-		 */
+		/* Reset the scene */
 		void reset();
 
-		/**
-		 * @brief Recoge los eventos, mensajeria
-		 * 
-		 */
+		/* Handle game events */
 		void event_handler();
 
 	private:
+		/* Game window */
+		sf::RenderWindow window;
 
-		/**
-		 * @brief Genera el escenario
-		 * 
-		 */
-		void generate_world();
+		/* Pointer to game scene */
+		Scene* scene;
 	};
 }

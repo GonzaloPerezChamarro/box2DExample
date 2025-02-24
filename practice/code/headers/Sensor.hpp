@@ -1,11 +1,11 @@
 /**
  * @file Sensor.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Sensor (trigger) que al entrar en colision hace mover una plataforma (Platform)
- * @version 0.1
+ * @brief Class of a sensor/trigger that activates a platform when collides with something
+ * @version 1.0
  * @date 2019-04-16
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -13,67 +13,49 @@
 
 #include "Platform.hpp"
 #include "Scene.hpp"
-
 #include "Vehicle.hpp"
+
+#include <set>
 
 namespace example
 {
 	class Sensor :public Rectangle
 	{
-	protected:
-
-		/**
-		 * @brief Puntero a la plataforma
-		 * 
-		 */
-		Platform * platform;
-
-		/**
-		 * @brief Offset de la plataforma
-		 * 
-		 */
-		b2Vec2 offset;
-
-		/**
-		 * @brief Tiempo de espera entre la entrada de la colision y el movimiento
-		 * 
-		 */
-		float delay;
-
-		/**
-		 * @brief Tiempo actual esperado
-		 * 
-		 */
-		float current_time;
-
-		/**
-		 * @brief Indica si el siguiente movimiento es hacia el target
-		 * 
-		 */
-		bool next_mov;
-
-
 	public:
 		/**
-		 * @brief Constructor de Sensor
-		 * 
-		 * @param scene Puntero a la escena
-		 * @param x_pltf posicion del sensor
-		 * @param y_pltf posicion del sensor
-		 * @param hx ancho
-		 * @param hy alto
-		 * @param platform_name nombre de la entidad de la plataforma
-		 * @param angle angulo de rotacion
+		 * @brief Constructor
+		 * @param scene Pointer to game scene
+		 * @param x_pltf Position X
+		 * @param y_pltf Position Y
+		 * @param hx Width
+		 * @param hy Height
+		 * @param platform_name Name of the entity platform
+		 * @param angle Rotation angle
 		 */
 		Sensor(Scene * scene, float x_pltf, float y_pltf, float hx, float hy, std::string platform_name, float angle = 0.f);
-	
-	public:
+
 		void update(float deltaTime) override;
 
-	public:
 		void collision_enter(Entity*) override;
 		void collision_exit(Entity*) override;
 
+	protected:
+		/* Pointer to the platform */
+		Platform* platform;
 
+		/* Movement offset of the platform */
+		b2Vec2 offset;
+
+		/* Delay between collision and activation */
+		float delay;
+
+		/* Collision elapsed time */
+		float current_time;
+
+		/* Flag that indicates that a collision is detected */
+		bool collision_detected;
+
+		/* Array of entities detected by the trigger */
+		std::set<std::string> entities_detected;
 	};
 }

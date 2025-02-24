@@ -4,7 +4,6 @@
 #include "Scene.hpp"
 
 
-
 namespace example
 {
 	Entity::Entity(Scene* scene) : scene(scene)
@@ -13,27 +12,29 @@ namespace example
 
 	Entity::~Entity()
 	{
-		for (auto & bodie : bodies) 
+		for (auto& bodie : bodies) 
 		{
 			scene->get_world().DestroyBody(bodie.second);
 		}
-		for (auto & joint : joints) 
+
+		for (auto& joint : joints) 
 		{
 			scene->get_world().DestroyJoint(joint.second);
 		}
+
 		delete scene;
 	}
+
 	void Entity::render(sf::RenderWindow & renderer)
 	{
-
 		float scale = scene->get_scale();
 
 		for (auto body_begin = bodies.begin(), body_end = bodies.end(); body_begin != body_end; ++body_begin){
 			b2Transform transform = body_begin->second->GetTransform();
 
-			for (auto fixture = body_begin->second->GetFixtureList(); fixture != nullptr; fixture = fixture->GetNext()) {
+			for (auto fixture = body_begin->second->GetFixtureList(); fixture != nullptr; fixture = fixture->GetNext()) 
+			{
 				b2Shape::Type type = fixture->GetShape()->GetType();
-
 
 				if (type == b2Shape::e_edge)
 				{
@@ -90,7 +91,6 @@ namespace example
 				sf::Vertex(convert_to_sfml_pos(anchor_B, (float)scene->get_height()), sf::Color::Blue)
 			};
 			renderer.draw(line, 2, sf::Lines);
-
 		}
 	}
 }

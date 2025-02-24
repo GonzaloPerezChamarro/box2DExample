@@ -1,8 +1,14 @@
-/**
- * @brief Pool básica
- * 
- */
 
+/**
+ * @file Pool.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Basic pool of objects
+ * @version 1.0
+ * @date 2019-04-16
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 
 namespace example
 {
@@ -11,57 +17,26 @@ namespace example
 	{
 		typedef OBJECT Object;
 		
-		/**
-		 * @brief Clase Nodo
-		 * 
-		 */
 		class Node
 		{
 		public:
-			/**
-			 * @brief Objeto
-			 * 
-			 */
+			
 			Object object;
-
-			/**
-			 * @brief Nodo anterior
-			 * 
-			 */
-			Node * next;
-
-			/**
-			 * @brief Nodo siguiente
-			 * 
-			 */
 			Node * prev;
+			Node * next;
 		};
 
-		/**
-		 * @brief Vector de nodos
-		 * 
-		 */
-		std::vector< Node > nodes;
+		/* Array of nodes*/
+		std::vector<Node> nodes;
 
-		/**
-		 * @brief Apunta al primer elemento de los nodos sin usar
-		 * 
-		 */
-		Node * first_free;
+		/* Points to the first free node */
+		Node* first_free;
 
-		/**
-		 * @brief Apunta al primer elemento de los nodos en uso
-		 * 
-		 */
-		Node * first_used;
-
+		/* Points to the first node in use*/
+		Node* first_used;
 
 	public:
-
-		/**
-		 * @brief Clase iterador entre nodos
-		 * 
-		 */
+		/* Class iterator, for iterate between nodes */
 		class Iterator
 		{
 			Node * current;
@@ -105,12 +80,7 @@ namespace example
 		};
 
 	public:
-
-		/**
-		 * @brief Constructor de Pool
-		 * 
-		 * @param size 
-		 */
+		/* Constructor */
 		Pool(size_t size) : nodes(size)
 		{
 			if (size > 0)
@@ -140,15 +110,8 @@ namespace example
 			current = &nodes[nodes.size() - 1];
 			current->prev = &nodes[nodes.size() - 2];
 			current->next = nullptr;
-
-
 		}
 
-		/**
-		 * @brief Devuelve Un objeto sin uso
-		 * 
-		 * @return Object* 
-		 */
 		Object * get_free_object()
 		{
 			Node * free = first_free;
@@ -176,11 +139,6 @@ namespace example
 
 		}
 
-		/**
-		 * @brief Livera el objeto que recibe
-		 * 
-		 * @param object 
-		 */
 		void free_object(Object * object)
 		{
 			Node * node = reinterpret_cast<Node *>(object);
@@ -217,7 +175,5 @@ namespace example
 		{
 			return Iterator(nullptr);
 		}
-
 	};
 }
-

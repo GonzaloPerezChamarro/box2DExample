@@ -1,3 +1,5 @@
+
+
 #include "Rectangle.hpp"
 
 namespace example
@@ -11,13 +13,11 @@ namespace example
 		body.type = type;
 
 		body.fixedRotation = false;
-		body.angle = angle_in_rad = angle * 3.14159 / 180 * 1;
+		body.angle = angle_in_rad = angle * 3.14159f / 180 * 1;
 		
 		position.x = x * pixels_scaled;
 		position.y = y * pixels_scaled;
 		body.position.Set(position.x, position.y);
-		
-		
 
 		bodies["rectangle"] = scene->get_world().CreateBody(&body);
 
@@ -32,17 +32,18 @@ namespace example
 		bodies["rectangle"]->CreateFixture(&fixture);
 
 		set_color(sf::Color::Cyan);
-
 	}
 
 	void Rectangle::update(float deltaTime)
 	{
 		//nothing
 	}
+
 	void Rectangle::collision_enter(Entity* e)
 	{
 		//nothing
 	}
+
 	void Rectangle::collision_exit(Entity*e)
 	{
 		//nothing
